@@ -1,0 +1,15 @@
+.form-header {
+  display: flex;
+  border: 5px solid orange;
+  border-radius: 10px;
+  position: absolute;
+  background-color: aliceblue;
+  top: 34%;
+  left: 25%;
+  justify-content: space-around;
+  width: 900px;
+  align-items: center;
+}
+.form-control {
+  border: hidden;
+}

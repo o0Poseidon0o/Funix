@@ -1,0 +1,14 @@
+.container-navbar {
+  background-color: blue;
+  padding: 30px 300px 30px 300px;
+  height: 100%;
+  position: relative;
+}
+.menu-navbar {
+  text-align: center;
+  align-items: center;
+}
+.navbar-content {
+  text-align: left;
+  margin: 30px;
+}

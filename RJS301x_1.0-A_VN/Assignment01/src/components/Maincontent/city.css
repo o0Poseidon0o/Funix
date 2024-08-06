@@ -1,0 +1,15 @@
+.city img {
+  width: 400px;
+  border-radius: 20px;
+}
+.city {
+  position: relative;
+}
+.content {
+  color: white;
+  font-size: 50px;
+  font-weight: 500;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}

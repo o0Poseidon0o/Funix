@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    gap: 2rem;
+  }
+}

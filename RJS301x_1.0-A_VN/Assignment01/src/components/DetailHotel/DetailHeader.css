@@ -1,0 +1,21 @@
+/*Thiết lập style phần header của component detail*/
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/*Địa chỉ*/
+.detail-header > div > p:nth-child(2) {
+  font-size: 0.6rem;
+}
+
+/* Khoảng cách đến trung tâm */
+.detail-header > div > p:nth-child(3) {
+  color: #0e6ba8;
+}
+
+/* Giá */
+.detail-header > div > p:nth-child(4) {
+  color: #049c04;
+}

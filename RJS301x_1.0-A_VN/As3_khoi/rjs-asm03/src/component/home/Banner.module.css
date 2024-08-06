@@ -1,0 +1,83 @@
+.container {
+  position: relative;
+}
+
+.container img {
+  width: 100%;
+}
+.content {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+.content h2 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.75rem;
+  /* white-space: nowrap; */
+  color: #adb5bd;
+  margin: 0;
+}
+.content h1 {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 400;
+  width: 70%;
+  margin: 0.5rem 0;
+  line-height: 2rem;
+}
+.content button {
+  font-size: 0.75rem;
+  /* width: 59%; */
+  padding: 0.5rem 1rem;
+  color: #adb5bd;
+  font-style: italic;
+  background-color: #000;
+}
+.content button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    position: relative;
+  }
+
+  .container img {
+    width: 100%;
+  }
+  .content {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+  }
+  .content h2 {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.25rem;
+    /* white-space: nowrap; */
+    color: #adb5bd;
+    margin: 0;
+  }
+  .content h1 {
+    font-size: 2.75rem;
+    font-style: italic;
+    font-weight: 400;
+    width: 70%;
+    margin: 1rem 0;
+    line-height: 3rem;
+  }
+  .content button {
+    font-size: 1.25rem;
+    /* width: 59%; */
+    padding: 0.5rem 2rem;
+    color: #adb5bd;
+    font-style: italic;
+    background-color: #000;
+  }
+  .content button:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+}

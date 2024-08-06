@@ -1,0 +1,69 @@
+.nav_list h1 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #f1f3f5;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+.nav_list li:nth-child(1) h1 {
+  background-color: #000;
+  color: #fff;
+}
+
+.nav_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav_list a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #000;
+  padding: 0rem 1.5rem;
+}
+.nav_list a:hover,
+.nav_list a.active {
+  color: sandybrown;
+}
+
+@media screen and (min-width: 1400px) {
+  .nav_list h1 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    background-color: #f1f3f5;
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+  }
+  .nav_list li:nth-child(1) h1 {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .nav_list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav_list a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #000;
+    padding: 0rem 1.5rem;
+  }
+  .nav_list a:hover,
+  .nav_list a.active {
+    color: sandybrown;
+  }
+}

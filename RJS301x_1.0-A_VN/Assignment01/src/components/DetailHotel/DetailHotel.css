@@ -1,0 +1,28 @@
+.detail-hotel {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  line-height: 1.8;
+}
+/*Thiết lập style cho các button trong component*/
+.detail-hotel button {
+  background-color: #0e6ba8;
+  border: none;
+  padding: 0.4rem;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*Phần perfect for a 9 night stay*/
+.detail-description > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #e7f5ff;
+  padding: 1rem;
+}
+
+/*Phần price*/
+.detail-description > div > p:nth-child(3) {
+  font-size: 1.5rem;
+}

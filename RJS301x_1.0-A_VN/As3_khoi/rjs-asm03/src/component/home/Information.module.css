@@ -1,0 +1,179 @@
+.service {
+  background-color: #f1f3f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service p {
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin: 0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.service h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  font-style: italic;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.content p {
+  font-size: 1rem;
+  text-transform: none;
+  font-family: sans-serif;
+}
+
+.mail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+}
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-style: italic;
+}
+.title p {
+  opacity: 0.5;
+  margin: 0;
+  font-style: italic;
+}
+.mail {
+  display: flex;
+}
+.mail form {
+  display: flex;
+  width: 100%;
+}
+.mail input {
+  padding: 0 1rem;
+  width: 100%;
+}
+.mail button {
+  border: 0;
+  /* font-size: 0.75rem; */
+  /* width: 59%; */
+  /* padding: 0.5rem 1rem; */
+  color: #adb5bd;
+  font-style: italic;
+  background-color: #000;
+}
+.mail button:hover {
+  color: #fff;
+}
+
+@media screen and (min-width: 1400px) {
+  .service {
+    background-color: #f1f3f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8rem 5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .service p {
+    opacity: 0.5;
+    text-transform: uppercase;
+    margin: 0;
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+
+  .service h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+    font-style: italic;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .content p {
+    font-size: 1.5rem;
+    text-transform: none;
+    font-family: sans-serif;
+  }
+  .mail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem 0;
+  }
+  .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .title h2 {
+    margin: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .title p {
+    opacity: 0.5;
+    margin: 0;
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+  .mail {
+    display: flex;
+  }
+  .mail form {
+    display: flex;
+    width: 100%;
+  }
+  .mail input {
+    font-size: 1.25rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+  }
+  .mail button {
+    border: 0;
+    font-size: 1.25rem;
+    width: 30%;
+    /* padding: 0.5rem 1rem; */
+    color: #adb5bd;
+    font-style: italic;
+    background-color: #000;
+  }
+  .mail button:hover {
+    color: #fff;
+  }
+}

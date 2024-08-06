@@ -1,0 +1,10 @@
+.hotel-styles img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+.hotel-styles span {
+  background-color: blue;
+  color: white;
+  margin-right: 10px;
+}

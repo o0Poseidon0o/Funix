@@ -1,0 +1,231 @@
+.container {
+  display: flex;
+
+  margin: 0rem auto;
+  width: 100%;
+  max-width: 70%;
+
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 3;
+  background-color: white;
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+.re_container {
+  display: flex;
+
+  margin: 0rem auto;
+  width: 100%;
+  max-width: 70%;
+
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 3;
+  background-color: white;
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-name: render;
+  animation-duration: 0.5s;
+}
+.image {
+  width: 70%;
+  height: auto;
+  padding: 1rem;
+}
+.container img {
+  width: 100%;
+}
+
+.close_btn {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+.close_btn:hover {
+  color: #f03e3e;
+}
+.content {
+  width: 80%;
+  padding: 3rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.content h2,
+h3,
+p {
+  margin: 0;
+  font-style: italic;
+}
+.content h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+.content h3 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.content button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 0;
+  /* font-size: 0.75rem; */
+  /* width: 59%; */
+  padding: 0.5rem 2rem;
+  color: #adb5bd;
+  font-style: italic;
+  background-color: #000;
+}
+
+.content p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 9; /* number of lines to show */
+  line-clamp: 9;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  opacity: 0.5;
+  width: 95%;
+}
+.content button:hover {
+  color: #fff;
+}
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes render {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    display: flex;
+
+    margin: 0rem auto;
+    width: 100%;
+    max-width: 70%;
+
+    justify-content: space-between;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    z-index: 3;
+    background-color: white;
+    animation-name: example;
+    animation-duration: 0.5s;
+  }
+  .re_container {
+    animation-name: render;
+    animation-duration: 0.5s;
+  }
+  .image {
+    width: 70%;
+    height: auto;
+    padding: 1rem;
+  }
+  .container img {
+    width: 100%;
+  }
+
+  .close_btn {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    border: 0;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .close_btn:hover {
+    color: #f03e3e;
+  }
+  .content {
+    width: 85%;
+    padding: 3rem 4rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .content h2,
+  h3,
+  p {
+    margin: 0;
+    font-style: italic;
+  }
+  .content h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+  }
+  .content h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .content button {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 0;
+    font-size: 1.5rem;
+    /* width: 59%; */
+    padding: 0.8rem 3rem;
+    color: #adb5bd;
+    font-style: italic;
+    background-color: #000;
+  }
+
+  .content p {
+    overflow: hidden;
+    text-align: justify;
+    opacity: 0.5;
+    width: 100%;
+    font-size: 1.25rem;
+  }
+  .content button:hover {
+    color: #fff;
+  }
+  @keyframes example {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes render {
+    from {
+      display: block;
+    }
+    to {
+      display: none;
+    }
+  }
+}
