@@ -1,0 +1,69 @@
+- font chữ: Typography
+  - Chỉ sử dụng các font chữ an toàn, không chọn bất cứ font chữ kỳ lạ nào cho trang web. Có thể dử dụng font chữ từ google-fonts, … Các font chữ thường hay sử dụng: Inter, Open Sans, Roboto, Lato, 
+  Lora, Aleo, Cardo, Merriweather, …
+  - Sử dụng tối đa hai font chữ trong trang web
+  - Sử dụng font chữ phù hợp với tính cách trang web.
+  - Sử dụng kích thước phù hợp với từng phần tử, …
+- Màu sắc: https://yeun.github.io/open-color/
+  Ý nghĩa của các màu(Nên sử dụng màu chính và màu xám)
+  - Màu đỏ: Tạo sự chú ý, tượng trưng cho sự đam mê, phấn khích và quyền lực
+  - Màu cam: Mức độ nhẹ hơn màu đỏ, tượng trưng cho hạnh phúc, vui vẻ và sáng tạo
+  - Màu vàng: tượng trưng cho niềm vui, sự tươi sáng, thông minh
+  - Màu xanh lá: tượng trưng cho thiên nhiên, sự hài hòa, sức khỏe
+  - Màu xanh lam: tượng trưng cho sự gắn kết, đáng tin cậy và chuyên nghiệp
+- Hình ảnh: https://heroicons.com/
+  - Nên sử dụng hình ảnh SVG <svg></svg>
+  - Icons thường hay đi kèm với văn bản, giúp mô tả trực quan đoạn văn bản đó.
+  - Việc sử dụng gói icons có trọng lượng tương đương với font chữ sẽ làm cho trang web 
+  có sự đồng nhất.
+  - Icons phải mang tính trực quan, mô tả cho văn bản hay các khối chức năng.
+  - Nên để các icons có đường nét mảnh, phù hợp với font chữ.
+- Đổ bóng: Shadow
+  - Quy tắc đầu tiên là sử dụng shadow với lượng nhỏ trong trang web của bạn. Không nên lạm dụng 
+  sử dụng shadow cho toàn bộ các thành phần trong trang web.
+  - Quy tắc thứ hai là bạn không nên để shadow quá tối, shadow cần cân đối với ánh sáng, màu nền của 
+phần tử sử dụng shadow. Nó sẽ giúp các thành phần trở nên tự nhiên hơn.
+  - Các giá trị trong box-shadow: 2px 5px 5px 0px #ddd;
+  - Giá trị đầu tiên: xác định shadow theo chiều ngang, giá trị dương shadow sẽ đổ từ trái qua phải. Ngược lại, giá trị âm shadow đổ từ phải qua trái.
+  - Giá trị thứ hai: xác định shadow theo chiều dọc, giá trị dương shadow sẽ đổ từ trên xuống dưới. 
+  Ngược lại, giá trị âm shadow đổ từ dưới lên trên.
+  - Giá trị thứ ba: blur-radius hay độ mờ phủ hay bán kính làm mờ.
+  - Giá trị thứ tư: spread-radius bán kính mở rộng của shadow.
+  - Giá trị thứ năm: màu sắc của shadow
+- Border-radius: đơn vị tính %,em,px
+  - Có nhiều trường hợp sử dụng thuộc tính border-radius tuy nhiên nó thường được sử dụng với các 
+  nút bấm, hình ảnh, các nền của icon, …
+  - Có thể tùy chỉnh được độ bo tròn tùy thuộc vào style của trang web.
+- whitespace:
+  - Hiểu đơn giản là khoảng cách giữa các phần tử.
+  - Khoảng trắng tạo liên hệ trong bố cục, giúp người dùng dễ dàng phân định các nhóm thành phần 
+  hay thông tin muốn truyền đạt.
+  - Các khối hay các phần tử khác nhau, không có liên quan với nhau cần tạo khoảng cách rõ ràng để phân chia. Ngược lại, các phần tử có liên 
+  quan với nhau thì khoảng trắng sẽ cần nhỏ hơn.
+  -Ví dụ: Trong khối form với label và input, các cặp label và input liên quan với nhau sẽ được đặt gần
+  với nhau hơn so với cặp label và input khác, tạo cảm giác phân chia giữa các nhóm và sự liên quan giữa các phần tử trong nhóm.
+
+- Visual Hierarchy:
+  - Là tất cả các việc về thiết kế để làm nổi bật những gì quan trọng trong thiết kế đó.
+  - Những gì quan trọng hơn sẽ nổi bật hơn.
+  - Hướng sự chú ý người dùng một cách trực quan trên trang web.
+
+- User Experience (UX)
+  - UI: tất cả những gì mà trang hiển thị, bố cục, font chữ, màu sắc, biểu tượng, khoảng cách, …
+  - UX: Đề cập đến trải nghiệm của người dùng khi tương tác với trang web như mức độ dễ sử dụng, giao
+  diện có trực quan, …
+  - Không tạo quá nhiều bố cục phức tạp, không nên phát minh lại bánh xe. Có thể sử dụng các mẫu được thiết lập tốt, 
+  giúp người dùng điều hướng đến trang nhanh hơn, đạt mục tiêu nhanh hơn.
+  - Luôn hướng người dùng đến các hành động, tương tác với trang web (ở đây là các nút bấm). Để hướng người dùng đến các 
+  hành động như các nút bấm cần làm nổi bật nó như trong bài học visual hierarchy.
+  - Sử dụng văn bản màu xanh lam, có gạch chân chỉ dùng cho link.
+  - Sử dụng hoạt ảnh (animation) có mục đích và thời gian cho nó trong khoảng 200ms – 500ms.
+  - Đặt các nút hành động ở nơi mà nó thực sự tạo ra sự thay đổi hay hiệu ứng.
+
+
+
+  
+
+- land-book.com, awwwards.com, onepagelove.com
+
+- Thành phần: screenlane.com

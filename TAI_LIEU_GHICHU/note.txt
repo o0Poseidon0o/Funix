@@ -1,0 +1,39 @@
+install "prettier" - Làm cho code đẹp hơn
+setting -> default -> chọn prettier
+format on save(check vào ô trống)
+auto save ->File: auto save (onfocuschange)
+tab size: 2
+
+Install "image preview"
+Install "color highlight"
+Install "Auto Rename Tag" setting auto close tag -> check HTML close tags
+Install "live server"
+
+
+
+
+elements:
+<h1> - <h6>
+<img>
+<p> </p>
+<a> </a>
+<ul>: List không đánh số
+<ol>: List danh sách đánh số.
+
+Thuộc tính alt cung cấp một văn bản thay thế cho nội dung phi văn bản. 
+Trong trường hợp là một hình ảnh, nếu bạn đặt sai đường dẫn ảnh hoặc vì lí do khác mà ảnh không thể hiển thị lên được, 
+văn bản trong thuộc tính alt sẽ hiển thị thay thế. Bên cạnh đó, thuộc tính alt cũng cung cấp ý nghĩa ngữ nghĩa cho các công cụ tìm kiếm 
+và giúp các công cụ tìm kiếm nhận ra nội dung trang của bạn.
+
+Khi viết nội dung cho thuộc tính alt thì cần chú ý các tiêu chí:
+
+Chính xác (accurate)
+Súc tích (succinct)
+Tránh dư thừa (redundant)
+Không dùng các cụm như "picture of" (hình ảnh của..) hoặc "graphic of.." (đồ họa của..)
+Trong ngôn ngữ HTML, thuộc tính (attribute) có thể tạm hiểu là một loại thông tin nào đó liên quan đến element.
+"Windows + . ": chèn biểu tượng trong Windows.
+
+Font chu: fonts.goole.com   type-scale.com
+
+path: https://bennettfeely.com/clippy/

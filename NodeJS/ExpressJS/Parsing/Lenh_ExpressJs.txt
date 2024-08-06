@@ -1,0 +1,12 @@
+npm install --save express //Cài đặt gói expressJS
+package.json // khi ta cài thêm gói nào vài thì nó sẽ tự cặp nhật vào file này
+Phần app.js
+const http = require('http'); // Sử dụng mô-đun HTTP của Node.js để tạo một máy chủ HTTP.
+
+const express = require('express'); // Sử dụng mô-đun Express để xử lý các yêu cầu HTTP.
+
+const app = express(); // Khởi tạo một ứng dụng Express.
+
+const server = http.createServer(app); // Tạo một máy chủ HTTP và truyền vào ứng dụng Express để xử lý các yêu cầu.
+
+server.listen(3000); // Khởi động máy chủ và lắng nghe các kết nối trên cổng 3000.

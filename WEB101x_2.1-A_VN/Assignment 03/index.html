@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/table.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Assignment 03</title>
+  </head>
+  <body>
+    <!--Bannner-->
+    <div class="container-fluid" >
+      <div class="img1">
+        <img src="./images/banner.jpg" alt="" style="width:100%">
+        <img class="avatar" src="./images/default-avatar.png" />
+        <div class="banner-name">
+        
+          <h1>LÊ MINH NHÂN</h1>
+          <span>Full Stack Developer</span>
+        </div> 
+      </div>      
+    </div>
+    <!--Menu-->
+    <section id="nav-bar">
+      
+        <div class="container-fluid p-3">
+          <div class="row">
+            <div class="col-md-3 nav-tittle"><svg
+              class="icon icon-user"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a href="#">Thông tin</a></div>
+            <div class="col-md-3  nav-tittle"><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-doc-text-inv"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zM9.75 14.25a.75.75 0 000 1.5H15a.75.75 0 000-1.5H9.75z"
+                clip-rule="evenodd"
+              />
+              <path
+                d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z"
+              />
+            </svg>
+            <a href="#">Lý lịch</a>
+          </div>
+            <div class="col-md-3  nav-tittle"><svg
+              class="icon icon-mail-alt"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+              />
+              <path
+                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+              />
+            </svg>
+            <a href="#">Chứng chỉ</a></div>
+            <div class="col-md-3  nav-tittle"><svg
+              class="icon icon-star-1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <a href="#">Dự Án</a></div>
+          </div>
+        </div>
+      </nav>
+      
+    </section>
+    <!--Thong tin-->
+    <section id="about" class="bg-grey">
+      <div class="container-md">
+        <div class="row ">
+          <div class="col-md-6">
+            <div id="target">
+              <h1 class="section-title">Mục tiêu nghề nghiệp</h1>
+              <p>
+                Là một sinh viên đã hoàn thành chương trình chứng chỉ Doanh Nghiệp
+                của FUNiX. Em mong muốn mình sẽ được làm việc với vị trí
+                <b>Fullstack Developer</b>, có thể vận dụng những kiến thức đã được
+                trau dồi và không ngừng học hỏi để phát triển bản thân, cũng như
+                hoàn thành tốt nhất công việc được giao.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6"><div id="personal-info">
+            <h1 class="section-title">Thông tin cá nhân</h1>
+            <ul class="mt-40 info">
+              <li><span>Giới tính</span> : Nam</li>
+              <li><span>Ngày sinh</span> : 16/05/1987</li>
+              <li><span>Điện thoại</span> : (+84) 9375xxxxx</li>
+              <li><span>Email</span> : sinhvien@funix.edu.vn</li>
+              <li><span>Địa chỉ</span> : Số 10, đường 10, TPHCM</li>
+              <li><span>Website</span> : https://abc.tech</li>
+            </ul>
+            <div class="personal-info-icon">
+              <svg
+                class="icon icon-twitter"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-twitter"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path>
+              </svg>
+              <svg
+                class="icon icon-facebook"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <svg
+                class="icon icon-gplus"
+                xmlns="http://www.w3.org/2000/svg"
+                width="2500"
+                height="2412"
+                viewBox="-5.572 -4.729 47.5 45.827"
+              >
+                <path
+                  fill="#4dabf7"
+                  d="M-4.294 28.338c4.03-5.689 11.812-6.163 15.645-5.649-1.066-1.146-3.753-3.279-1.857-6.795C.842 16.96-1.923 11.627-2.318 7.439-3.108.407 3.054-4.649 9.375-4.729H23.36c-.474.435-2.805 1.976-3.358 1.976l-3.674.039c9.363 8.81.276 16.198-1.581 17.738-3.753 4.543 8.02 6.795 7.388 14.499 0 6.992-5.886 11.575-15.091 11.575-10.232-.039-15.13-6.399-11.338-12.76zm20.504 8.494c3.674-2.805 2.805-6.953-.04-9.719-1.699-1.659-3.753-3.239-8.099-2.726-5.097.593-8.81 3.042-8.612 6.874 1.066 8.139 12.8 8.336 16.75 5.531v.04zm-2.489-23.901c4.227-3.477.316-15.604-5.452-15.604-3.674 0-5.57 2.646-5.729 6.4-.276 6.952 6.085 13.392 11.181 9.204zm18.686 4.424l-6.36.04v-3.2h6.282V7.914h3.2v6.282l6.36.039.039 3.161h-6.399v6.321l-3.161.04.039-6.402z"
+                />
+              </svg>
+              <svg
+                class="icon icon-linkedin"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                  fill="#4dabf7"
+                ></path>
+              </svg>
+            </div>
+          </div></div>
+        </div>
+       
+        
+      </div>
+    </section>
+    <!--Kinh nghiem-->
+    <section id="job-info">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-md-4 mt-1 mb-1">
+            <div class="job--info">
+            <div>
+              <h1>Kinh nghiệm</h1>
+            </div>
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
+              />
+            </svg>
+
+            <ul class="content">
+              <li>
+                <strong>System admin - Công ty TOWA Việt Nam </strong><br/>
+                (10-2018 - <a>Hiện Nay</a>)
+                <br />
+                - Xây dựng web dựa trên thiết kế web cho công ty <br />
+                - Xậ dựng bao vệ hệ thống mạng<br />
+                - Biết sử dụng ngôn ngữ Python
+              </li>
+              <li>
+                <strong>Trưởng phòng kỹ thuật - Công ty LSH</strong><br/>
+                (01/2016 -09/2018)
+                <br />
+                - Thiết kế web <br />
+                - Sử dụng các công cụ Figma, Canva.
+              </li>
+            </ul>
+          </div></div>
+          <div class="col-md-4 mt-1 mb-1">
+            <div class="job-info job--info">
+            <div><h1>Hoạt động</h1></div>
+
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
+              />
+            </svg>
+
+            <ul class="content">
+              <li>
+                <strong>Đá bóng </strong>
+                <br/>
+                - Huy chương đồng toàn trường<br />
+                - Đội trưởng khoa công nghệ thông tin
+               
+              </li>
+              <li>
+                <strong>Câu lạc bộ học thuật</strong>
+                <br />
+                - Tham gia thi công thiết kế hệ thống mạng cho khoa <br />
+                - Viết tài liệu về hệ điều hành LINUX và WINDOWS SERVER.
+              </li>
+            </ul>
+          </div></div>
+          
+          <div class="col-md-4 mt-1 mb-1"> 
+            <div class="job--info">
+            <div><h1>Kỹ năng</h1></div>
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"
+              />
+            </svg>
+            <div class="content">
+              <p>HTML/CSS: Fundamental</p>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <span class="span-two"></span>
+              <p>JAVASCRIPT: Intermediate</p>
+              <span class="span-one"></span>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <p>NODE JS: Intermediate</p>
+              <span class="span-one"></span>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <p>BOOTSTRAP 5:Fundamental</p>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <span class="span-two"></span>
+            </div>
+          </div></div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-4 mt-1 mb-1">
+            <div class="job-info job--info">
+              <div><h1>Học vấn</h1></div>
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+              />
+            </svg>
+            <ul class="content">
+              <li>
+                <strong>FUNIX </strong><br />
+                09/2022 - 03/2023 <br />
+                - Tốt nghiệp chứng chỉ doanh nghiệp fullstack<br />
+                - GPA 8.0<br />
+                
+              </li>
+              <li>
+                <strong>Cử nhân Đại học Tôn Đức Thắng</strong><br />
+                - Network engineer <br />
+                - Thành thạo cấu hình, thiết kế hệ thống mạng
+              </li>
+            </ul>
+          </div>
+        </div>
+          <div class="col-md-4 mt-1 mb-1">
+            <div class="job-info job--info">
+            <div><h1>Ngôn ngữ</h1></div>
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+              />
+            </svg>
+            <div class="content">
+              <p></p>Tiếng Anh: IELTS 7.0</p>
+              <span class="span-one"></span>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <p>Tiếng Nhật - JLPT N4</p>
+              <span class="span-one"></span>
+              <span class="span-two"></span>
+              <span class="span-two"></span>
+            </div>
+          </div></div>
+          <div class="col-md-4 mt-1 mb-1"><div class="job-info job--info">
+            <div><h1>Sở thích</h1></div>
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
+              />
+            </svg>
+            <table>
+              <tr>
+                <th>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+                    />
+                  </svg>
+                </th>
+                <th>
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-controller"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z"
+                    />
+                    <path
+                      d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z"
+                    />
+                  </svg>
+                </th>
+                <th>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-airplane-engines"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z"
+                    />
+                  </svg>
+                </th>
+                <th>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+                    />
+                  </svg>
+                </th>
+              </tr>
+              <tr>
+                <th>Đọc sách</th>
+                <th>Chơi game</th>
+                <th>Du lịch</th>
+                <th>Nghe nhạc</th>
+              </tr>
+            </table>
+          </div>
+        </div>        
+      </div>
+    </section>
+    <!--Chung chi giai thuong-->
+    <section id="certificate" class="bg-grey">
+      <div class="container-md">
+        <h1 class="section-title">Chứng chỉ - Giải thưởng</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="certificate-tilte">
+              <img src="./images/Cert_DBI.png" alt="" />
+              <div>
+                <p><strong>ỨNG CHỈ LẬP TRÌNH WEB - FUNIX</strong></p>
+                <br />
+                <p>- Chứng chỉ thuộc chương trình CCDN</p>
+                <p>- G 8.6</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="certificate-tilte">
+              <img src="./images/Cert_PRF.png" alt="" />
+              <div>
+                <p><strong>ỨNG CHỈ LẬP TRÌNH JAVASCRIPT - FUNIX</strong></p>
+                <br />
+                <p>- Chứng chỉ thuộc chương trình CCDN</p>
+                <p>-G 8.4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="certificate-tilte">
+              <img src="./images/Cert_WEB.png" />
+              <div>
+                <p><strong>ỨNG CHỈ LẬP TRÌNH DATABASE - FUNIX</strong></p>
+                <br />
+                <p>- Chứng chỉ thuộc chương trình CCDN</p>
+                <p>-G 8.5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  -->
+    <!--Du an-->
+    <section id="project">
+      <div class="container-md">
+        <h1 class="section-title" href="digitalCV.html">Dự án</h1>
+        <div class="div xem-them">
+          <a href="digitalCV.html">Xem thêm</a>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4">
+            <div class="project-title">
+            <img src="./images/project_1.png"/>
+            <div class="project--title">
+              <div> <strong>CV CÁ NHÂN</strong></div>
+              <div class="container--project">
+                <p>2022</p>
+                <svg
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p>FUNIX</p>
+                <svg
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                  />
+                </svg>
+                <p>DEVELOPER</p>
+              </div>
+              <table class="project-table">
+                <tr>
+                  <td>Mô tả</td>
+                  <td>
+                    Trang web CV Cá nhân online. Gồm các thông tin cá nhân cũng
+                    như nghề nghiệp
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nhiệm vụ</td>
+                  <td>Phát triển code - Review code -Tối ưu code - Fix lỗi</td>
+                </tr>
+                <tr>
+                  <td>Công nghệ</td>
+                  <td>HTML - CSS</td>
+                </tr>
+              </table>
+            </div>
+          </div></div>
+          <div class="col-md-4">
+            <div class="project-title">
+              <img src="./images/project_2.png" />
+              <div class="project--title">
+                <div><strong>TRANG WEB QUẢN LÝ THÚ CƯNG</strong></div>
+                <div class="container--project">
+                  <p>2022</p>
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p>FUNIX</p>
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                    />
+                  </svg>
+                  <p>DEVELOPER</p>
+                </div>
+                <table class="project-table">
+                  <tr>
+                    <td>Mô tả</td>
+                    <td>
+                      Ứng dụng giúp quản lý thú cưng - cân nặng - chiều cao -
+                      giống - tính trạng
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nhiệm vụ</td>
+                    <td>Phát triển code - Review code -Tối ưu code - Fix lỗi</td>
+                  </tr>
+                  <tr>
+                    <td>Công nghệ</td>
+                    <td>HTML - CSS - javascript</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project-title">
+              <img src="./images/project_3.png" />
+              <div class="project--title">
+                <div><strong>TRANG WEB XEM TIN TỨC</strong></div>
+                <div class="container--project">
+                  <p>2022</p>
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <p>FUNIX</p>
+                  <svg
+                    class="icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                    />
+                  </svg>
+                  <p>DEVELOPER</p>
+                </div>
+                <table class="project-table">
+                  <tr>
+                    <td>Mô tả</td>
+                    <td>
+                      Trang web xem tin tức từ nhiều nguồn khác nhau. Người dùng
+                      có thể xem tin tức bằng từ khóa khác nhau
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nhiệm vụ</td>
+                    <td>Phát triển code - Review code -Tối ưu code - Fix lỗi</td>
+                  </tr>
+                  <tr>
+                    <td>Công nghệ</td>
+                    <td>HTML - CSS - javascript</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </section>
+    <!--footer-->
+    <section id="footer" class="bg-grey">
+      <div class="container">
+        <div class="d-flex justify-content-evenly">
+          <div class="container-footer">
+            <svg
+            class="icon icon-facebook"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-facebook"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+            />
+          </svg>
+          <a>Facebook</a></div>
+          <div class="container-footer">
+            <svg
+            class="icon icon-linkedin"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-linkedin"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+            />
+          </svg>
+          <a>Linkedin</a>
+          </div>
+          <div class="col-md-4 container-footer">
+            <svg
+            class="icon icon-github"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-github"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+          <a>Github</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

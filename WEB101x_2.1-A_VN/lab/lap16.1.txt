@@ -1,0 +1,41 @@
+** start of undefined **
+
+<link rel="stylesheet" href="styles.css">
+<main id="main">
+  <div id="title">
+    <h1>Dr. Norman Borlaug</h1>
+    <p>The man who saved a billion lives</p>
+  </div>
+  <div id="img-div">
+    <img id="image" src='https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute-page-main-image.jpg' alt=''>
+    <div id="img-caption">Dr. Norman Borlaug, third from the left, trains biologists in Mexico on how to increase wheat yields - part of his life-long war on hunger.
+    </div>
+  </div>
+  <div id="tribute-info">
+    <p>Here's a time line of Dr. Borlaug's life:</p>
+    <ul>
+      <li>1914 - Born in Cresco, Iowa</li>
+      <li>1933 - Leaves his family's farm to attend the University of Minnesota, thanks to a Depression era program known as the "National Youth Administration"</li>
+    </ul>
+    <p> <i>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."
+<br/>
+-- Indian Prime Minister Manmohan Singh</i></p>
+   <p><strong>If you have time, you should read more about this incredible human being on his <a id="tribute-link" href="https://en.wikipedia.org/wiki/Norman_Borlaug" target= "_blank">Wikipedia entry</a></strong>.</p>
+  </div>
+</main>
+
+** end of undefined **
+
+** start of undefined **
+
+#title {
+  text-align:center;
+  background-color:  #c3c7c6
+}
+#image{
+  display:block;
+  max-width:100%
+}
+
+** end of undefined **
+

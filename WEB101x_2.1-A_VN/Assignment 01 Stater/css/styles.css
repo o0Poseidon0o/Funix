@@ -1,0 +1,141 @@
+body {
+  margin: 0px;
+}
+
+.cv-document {
+  box-sizing: border-box;
+  border: none;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: arial, sans-serif, tahoma;
+  font-size: 12pt;
+}
+
+.cv-page {
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+  width: 900px;
+  min-height: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  position: relative;
+
+  padding: 40px;
+}
+.section {
+  margin: 40px;
+}
+
+.section-content {
+  position: relative;
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+.section--content.one {
+  width: 200px;
+  text-align: justify;
+  vertical-align: top;
+  margin-left: 10px;
+}
+.section--content.two {
+  width: 70%;
+  text-align: justify;
+  vertical-align: top;
+}
+
+.section-title {
+  border-bottom: 2px solid black;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.img {
+  position: absolute;
+  top: 10px;
+  left: 500px;
+  width: 113px;
+  height: 113px;
+}
+.info {
+  font-weight: bold;
+  width: 200px;
+}
+li {
+  /*Bật định vị tương đối để 
+  dòng được đặt tương đối với mục chứ không phải hoàn toàn trên trang*/
+  position: relative;
+
+  /* Sử dụng padding để khoảng trống mọi thứ thay vì lề vì nếu không thì đường thẳng sẽ bị chia nhỏ*/
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+  list-style-type: none; /*bo dau cham the */
+}
+li:before {
+  background-color: #c00;
+  width: 2px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 5px;
+}
+.bullet {
+  margin-left: -20px;
+  width: 12px;
+  fill: #c00;
+  float: left;
+  padding-right: 10px;
+}
+.bullet.big {
+  width: 16px;
+  margin-left: -22px;
+  padding-right: 8px;
+}
+/*link-path https://bennettfeely.com/clippy/   tham khao them*/
+.section---content {
+  position: relative;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: red;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  margin-left: -3px;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 99.5%;
+  background-color: red;
+
+  border-radius: 50%;
+  z-index: 1;
+}
+a {
+  font-weight: 600;
+}

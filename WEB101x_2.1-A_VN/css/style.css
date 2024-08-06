@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Kanit", sans-serif;
+  height: 100%;
+}
+.back_ground {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  display: grid;
+  background-color: antiquewhite;
+  position: relative;
+}
+.trangchu {
+  background-color: brown;
+}
+.gioithieu {
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    (3, 1FR)
+  ); /* auto-fill tự động rớt xuống hàng*/
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+h4 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  grid-area: 1/1/2/4; /*hang1 cột 1, hàng 2 cột 4*/
+}
+.sanpham h4 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  grid-area: 1/1/2/5; /*hang1 cột 1, hàng 2 cột 4*/
+}
+.sanpham {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, (4, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+.content-sanpham img {
+  width: 250px;
+  height: 250px;
+  align-items: center;
+}
+.content-sanpham {
+  text-align: justify;
+}
+
+.lienhe {
+  background-color: blueviolet;
+  position: relative;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  left: 90%;
+  top: 10px;
+  position: absolute;
+}

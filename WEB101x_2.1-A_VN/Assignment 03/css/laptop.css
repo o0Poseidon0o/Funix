@@ -1,0 +1,54 @@
+@media (max-width: 1368px) {
+  /*Bannner*/
+  .banner-name h1 {
+    font-size: 20px;
+  }
+  .banner-name {
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+  }
+  .avatar {
+    display: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 90%;
+    left: 44%;
+    border: 5px solid white;
+  }
+  /* digitalCV */
+  .container-extend {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+    grid-template-areas:
+      "content1"
+      "content2"
+      "content3"
+      "content4"
+      "timesline";
+  }
+  #goals p {
+    display: inline-block;
+  }
+  #goals .fa-solid {
+    text-align: center;
+  }
+
+  .goals-content {
+    flex-direction: column;
+  }
+  /* Team */
+  .team-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* Times line */
+  .content-timesline {
+    flex-direction: column;
+    border-bottom: 3px dashed green;
+  }
+}

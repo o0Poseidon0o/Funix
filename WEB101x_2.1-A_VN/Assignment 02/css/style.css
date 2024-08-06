@@ -1,0 +1,277 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.bg-grey {
+  background: #f7f7f7;
+}
+body {
+  width: 100%;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  color: #4dabf7;
+}
+
+section > .container {
+  width: 1170px;
+  margin: auto;
+  display: block;
+
+  padding: 30px 50px;
+}
+
+#nav-bar {
+  text-align: center;
+}
+
+/*Bannner*/
+#banner {
+  background-image: url(../images/banner.jpg);
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+.banner-name {
+  text-align: center;
+  color: white;
+  position: absolute;
+  left: 45%;
+  bottom: 50%;
+}
+/*Menu*/
+#nav-bar .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.container--nav-title-one {
+  grid-column: 4/5;
+}
+.container--nav-title-two {
+  grid-column: 5/6;
+}
+.contaniner-nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  border: 5px solid white;
+}
+/*Thong tin*/
+#about .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#target {
+  padding: 30px;
+  background-color: #dee2e6;
+}
+#personal-info {
+  padding: 30px;
+  background-color: #ced4da;
+}
+#personal-info ul {
+  list-style-type: none;
+}
+#personal-info h1 {
+  padding-left: 35px;
+}
+#personal-info .icon {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+.personal-info-icon {
+  margin-left: 35px;
+}
+/*Kinh nghiem*/
+#job-info .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.job--info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 20px;
+  border: 2px solid #ced4da;
+  height: 300px;
+}
+.job--info .content {
+  grid-column: 1/3;
+  list-style-type: none;
+}
+.job--info div {
+  margin: 20px;
+  margin-bottom: 0px;
+}
+.job--info .icon {
+  width: 60px;
+  height: 60px;
+  color: #dee2e6;
+}
+.job--info table .icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #74c0fc;
+  border-radius: 50%;
+  color: #74c0fc;
+  padding: 5px;
+}
+.job--info table {
+  grid-column: 1/3;
+}
+.content span {
+  width: 45px;
+  height: 2px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.span-one {
+  background: #74c0fc;
+}
+.span-two {
+  background: #ced4da;
+}
+.content-table {
+  grid-column: 1/3;
+  text-align: justify;
+}
+
+.content li::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #4dabf7;
+  position: absolute;
+  border-radius: 50%;
+  left: -20px;
+  top: 5px;
+}
+li {
+  position: relative;
+}
+.content a {
+  color: white;
+  border: 1px solid #4dabf7;
+  background-color: #4dabf7;
+  width: 100px;
+  border-radius: 10px;
+  padding: 2px;
+}
+/*Chung chi giai thuong*/
+.certificate-tilte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  position: relative;
+  font-size: 14px;
+}
+.certificate-tilte img {
+  width: 200px;
+  height: 100px;
+}
+.certificate::before {
+  content: "";
+  background-color: #d6c08d;
+  width: 1050px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+}
+.certificate::after {
+  content: "";
+  background-color: #d6c08d;
+  width: 2px;
+  height: 120px;
+  position: absolute;
+  left: 50%;
+}
+
+/*Du an*/
+#project .container-project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+#project img {
+  width: 350px;
+  height: 250px;
+}
+.project-title {
+  padding: 5px;
+}
+.project--title {
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-bottom: none;
+}
+.container--project {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0px 5px 0px;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding: 5px;
+}
+.container--project p:first-child {
+  background-color: #74c0fc;
+  border: 2px solid #74c0fc;
+  color: white;
+  width: 80px;
+  text-align: center;
+  border-radius: 20px;
+}
+#project .icon {
+  width: 20px;
+  height: 20px;
+  color: #ced4da;
+}
+.project-table td:first-child {
+  width: 100px;
+}
+.project-table td:last-child {
+  text-align: justify;
+}
+.project-table {
+  margin-top: 5px;
+}
+.project-table td {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/*footer*/
+.container-footer .icon {
+  width: 20px;
+  height: 20px;
+}
+.container-footer a {
+  float: right;
+  text-align: center;
+  text-transform: none;
+  color: #ced4da;
+  font-size: 15px;
+  padding: 2px;
+}
+.container-footer {
+  align-items: center;
+}
+.container-footer li {
+  display: inline-block;
+}
+.container-footer ul {
+  margin-left: 300px;
+}

@@ -1,0 +1,132 @@
+** start of undefined **
+
+    <nav id="navbar">
+        <header>Hello world</header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#van_ban_1">Van ban 1</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#van_ban_2">Van ban 2</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#van_ban_3">Van ban 3</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#van_ban_4">Van ban 4</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#van_ban_5">Van ban 5</a>
+            </li>
+        </ul>
+       
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="van_ban_1">
+            <header>Van ban 1</header>
+            <article>
+                <p style="background-color: red ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+                <ul>
+                    <li>Cham 3</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                </ul>
+                <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                    greetMe("World");</code>
+                <p style="background-color: rgb(143, 223, 14) ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+            </article>
+        </section>
+        <section class="main-section" id="van_ban_2">
+            <header>Van ban 2</header>
+            <article>
+                <p style="background-color: red ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+                <ul>
+                    <li>Cham 3</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                </ul>
+                <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                    greetMe("World");</code>
+                <p style="background-color: rgb(143, 223, 14) ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+            </article>
+        </section>
+        <section class="main-section" id="van_ban_3">
+            <header>Van ban 3</header>
+            <article>
+                <p style="background-color: red ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+                <ul>
+                    <li>Cham 3</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                </ul>
+                <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                    greetMe("World");</code>
+                <p style="background-color: rgb(143, 223, 14) ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+            </article>
+        </section>
+        <section class="main-section" id="van_ban_4">
+            <header>Van ban 4</header>
+            <article>
+                <p style="background-color: red ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+                <ul>
+                    <li>Cham 3</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                </ul>
+                <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                    greetMe("World");</code>
+                <p style="background-color: rgb(143, 223, 14) ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+            </article>
+        </section>
+        <section class="main-section" id="van_ban_5">
+            <header>Van ban 5</header>
+            <article>
+                <p style="background-color: red ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+                <ul>
+                    <li>Cham 3</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                    <li>Cham 1</li>
+                    <li>Cham 2</li>
+                </ul>
+                <code>function greetMe(yourName) { alert("Hello " + yourName); }
+                    greetMe("World");</code>
+                <p style="background-color: rgb(143, 223, 14) ;">JavaScript is a cross-platform, object-oriented scripting language</p>
+                <p>JavaScript is a cross-platform, object-oriented scripting language</p>
+            </article>
+        </section>
+    </main>
+    <link rel="stylesheet" href="styles.css">
+
+** end of undefined **
+
+** start of undefined **
+
+#navbar{
+  width: 45%;
+}
+@media(max-width: 768px){
+  body{
+    background-color:green;
+  }
+}
+
+** end of undefined **
+

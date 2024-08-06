@@ -1,0 +1,18 @@
+npm init // Cài đặt gói phần mềm bên thứ 3
+Sau khi dùng lệnh npm init
+{
+  "name": "part2",
+  "version": "1.0.0",
+  "description": "Co ban ve nodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" // Thêm đoạn này để chạy ứng dụng nodeJs bằng lệnh npm start để chạy app.JS
+    "start-server":"node app.js" // Cái này phải dùng lệnh npm run start-server
+  },
+  "author": "Le_Nhan",
+  "license": "ISC"
+}
+// gói cài để chương trình tự động chạy lại khi thay đổi gì đó
+npm install nodemon --save-dev
+npm install nodemon -g // sử dụng bất kì đâu

@@ -1,0 +1,17 @@
+Share câu hỏi review Lab môn javascript
+1. ghép 2 tring với nhau và hiển thị
+2. tạo modal tương tự lab 8
+3. Tạo 1 hàm bất đồng bộ bất kỳ
+4. Mentor cho 1 api. tạo hàm để lấy dữ liệu từ api đó và hiển thị.
+5. Sử dụng JS để thao tác CSS (vd. sử dụng JS để hiển thị grid 3 cột)
+Hiệp
+6.Tạo mảng [1,2,3,4,5,6] xuất ra mảng con là các số chẵn
+
+Câu hỏi thi cuối môn PRF
+1. Tạo 1 tiêu đề <h1> bằng JS, Thay đổi màu sắc, kích thước của nó, đổi màu khi di chuyển qua.
+2.Tạo 1 mảng số bất kỳ, sử dụng reduce để xuất ra tổng các số lẻ
+3.Viết 1 hàm xuất ra dữ liệu với API cho sẵn
+4. JS có mấy kiểu dữ liệu.
+5. Có mấy cách khai báo biến trong JS, chúng khác nhau như thế nào (let, const, var)
+6. bạn hiểu gì về prototype
+7. Có mấy cách xử lý bất đồng bộ trong JS (3 cách [tạo hàm callback, tạo promise (then) , và async - await])), bản chất của async await là gì.

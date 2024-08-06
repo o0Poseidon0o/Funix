@@ -1,0 +1,85 @@
+body {
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+}
+
+main {
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.player {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+.player .name {
+  color: aliceblue;
+  font-size: 60px;
+}
+.player .score {
+  color: aliceblue;
+  font-size: 60px;
+}
+.player--active {
+  background-color: rgba(235, 57, 190, 0.35);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.current {
+  background-color: #e7185d;
+  color: white;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 10px;
+  margin: 0px auto;
+}
+
+.btn {
+  position: absolute;
+  font-size: 30px;
+  border-radius: 25px;
+  border: 0px;
+  padding: 10px;
+}
+.btn--new {
+  top: 10%;
+  left: 44%;
+  margin: 0px auto;
+}
+.btn--roll {
+  bottom: 30%;
+  left: 45%;
+}
+.btn--hold {
+  bottom: 20%;
+  left: 47%;
+}
+
+.dice {
+  position: absolute;
+  left: 44%;
+  width: 200px;
+  top: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

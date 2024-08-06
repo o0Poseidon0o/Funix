@@ -1,0 +1,17 @@
+<style>
+  body {
+    background-color: black;
+    font-family: Arial;
+    color: black;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+  #orange-text {
+    color: orange;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text">Example</h1>

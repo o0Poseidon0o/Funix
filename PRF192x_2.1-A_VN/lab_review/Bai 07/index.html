@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>XIN CHÀO MỌI NGƯỜI 1</h1>
+    <h1 id="heading2">XIN CHÀO MỌI NGƯỜI 2</h1>
+
+    <h1 class="header">XIN CHÀO MỌI NGƯỜI 3</h1>
+    <h1 class="header">XIN CHÀO MỌI NGƯỜI 4</h1>
+    <h1 class="header">XIN CHÀO MỌI NGƯỜI 5</h1>
+
+    <script>
+      "use strict";
+
+      const h1El = document.querySelector("h1");
+      console.log(h1El);
+
+      const h1El2 = document.querySelector("#heading2");
+
+      console.log(h1El2);
+
+      const h1El3 = document.getElementsByClassName("header");
+      console.log(h1El3);
+
+      h1El.addEventListener("click", function () {
+        // code
+      });
+
+      function myFunc() {
+        h1El.style.color = "red";
+        alert("OK, hàm này sẽ chạy khi click vào h1 !");
+        console.log("Done");
+      }
+
+      // từ 1 node nào đó ==> tìm đến các phần tử con của nó
+      /// từ 1 nào đó --> tìm đến các phần tử anh em của nó
+    </script>
+  </body>
+</html>
