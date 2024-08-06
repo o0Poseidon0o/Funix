@@ -1,0 +1,8 @@
+ Git add: Đưa code, thư mục hiện tại vào Staging Area, xác định phiên bản sẽ được commit trong lần commit tiếp theo.
+ Git commit: Cam kết phiên bản trong Staging Area.
+ Git push: Đưa code, thư mục từ Git directory (repository) đến repository từ xa (remote repository).
+ Git fetch: Nhận các tệp từ repository từ xa (remote repoitory) đến kho lưu trữ cục bộ (local repository) nhưng chưa đến working directory của bạn.
+ Git merge: Tải tệp được cập nhập từ kho lưu trữ cục bộ (local repository) đến working directory của bạn.
+ Git pull: Đây là sự kết hợp và rút ngắn của 2 câu lệnh trên. Nó sẽ đưa trực tiếp các tệp từ repository từ xa (remote repoitory) đến working directory của bạn.
+ Git diff HEAD: Nếu bạn thắc mắc tại sao phải sử dụng 2 lệnh git fetch, git merge trong khi có thể rút gọn thời gian bằng git pull, thì đó là vì có những lúc ta sẽ cần sử dụng git diff HEAD để kiểm tra sự khác biệt giữa ác tệp tồn tại trọng Working directory và các tệp nằm trong kho lưu trũ cục bộ (local repository).
+ Git diff: So sánh cho bạn biết sự khác biệt giữa các tệp trong Working directory và các tệp nằm trong Staging Area chuẩn bị được commit.
