@@ -1,0 +1,4 @@
+npx create-react-app app-name : tạo dự án
+“cd app-name” => “npm start”: chạy dự án
+
+compoments khi tao 1 ham bat buoc phai viet hoa chu cai dau
