@@ -1,0 +1,10 @@
+
+[
+  { "name": "Trang chủ", "href": "#", "current": true },
+  { "name": "Giới thiệu", "href": "#", "current": false },
+  { "name": "Ứng dụng", "href": "#", "current": false },
+  { "name": "Thông báo", "href": "#", "current": false },
+  { "name": "Qui định", "href": "#", "current": false },
+  { "name": "Công đoàn", "href": "#", "current": false },
+  { "name": "Hình ảnh", "href": "#", "current": false }
+]
