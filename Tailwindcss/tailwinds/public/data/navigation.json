@@ -1,0 +1,14 @@
+
+[
+  { "name": "Home", "href": "/", "current": true },
+  { "name": "User Card", "href": "/Usercards", "current": true },
+  { "name": "Search", "href": "/Search", "current": false },
+  { "name": "Collection List", "href": "/Collectionlist", "current": false },
+  { "name": "Review Modal", "href": "/Reviewmodal", "current": false },
+  { "name": "Users List", "href": "/Userslist", "current": false },
+  { "name": "Notification", "href": "/Notification", "current": false },
+  { "name": "Subscription", "href": "/Subscription", "current": false },
+  { "name": "Job Cards", "href": "/Jobcards", "current": false },
+  { "name": "Company List", "href": "/Companylist", "current": false },
+  { "name": "Langding Page", "href": "/Langdingpage", "current": false }
+]

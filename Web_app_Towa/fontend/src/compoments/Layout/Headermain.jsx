@@ -3,17 +3,17 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 export default function Headermain() {
   return (
-    <div className="items-center grid grid-cols-3">
-      <div className="logo">
+    <div className="items-center flex bg-blue-600 h-auto p-2">
+      <div className="flex-none w-14 h-14">
         <img
-          src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
-          className=" w-24 m-2 "
-        alt="logo"></img>
+          src="https://towa.com.vn/uploads/images/2021/06/286x75-1624605899-single_info36-cc.png"
+          alt="logo" className="w-32 m-3"
+        />
       </div>
-      <div className="">
-        <h1 className="text-2xl font-bold">HỆ THỐNG QUẢN LÝ </h1>
+      <div className="grow h-14 items-center text-center text-3xl font-bold text-stone-100 ">
+        <h1>TỔNG QUAN</h1>
       </div>
-      <div>
+      <div className="flex-none w-14 h-14">
         <Menu as="div" className="relative inline-block text-left">
           {/* Profile dropdown */}
           <Menu as="div" className="relative ml-3">

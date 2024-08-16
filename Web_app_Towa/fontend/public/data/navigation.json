@@ -1,10 +1,10 @@
 
 [
-  { "name": "Trang chủ", "href": "#", "current": true },
-  { "name": "Giới thiệu", "href": "#", "current": false },
-  { "name": "Ứng dụng", "href": "#", "current": false },
-  { "name": "Thông báo", "href": "#", "current": false },
-  { "name": "Qui định", "href": "#", "current": false },
-  { "name": "Công đoàn", "href": "#", "current": false },
-  { "name": "Hình ảnh", "href": "#", "current": false }
+  { "name": "Trang chủ", "href": "/", "current": true },
+  { "name": "Hướng dẫn", "href": "/Huongdan", "current": false },
+  { "name": "Ứng dụng", "href": "/Ungdung", "current": false },
+  { "name": "Thông báo", "href": "/Thongbao", "current": false },
+  { "name": "Qui định", "href": "/Quidinh", "current": false },
+  { "name": "Công đoàn", "href": "/Congdoan", "current": false },
+  { "name": "Hình ảnh", "href": "/Hinhanh", "current": false }
 ]
