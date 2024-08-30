@@ -2,6 +2,6 @@ import React from "react";
 
 export default function Thongbao (){
     return (
-        <h1>Thông báo</h1>
+        <div>Thông báo</div>
     )
 }

@@ -3,15 +3,15 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
 export default function Headermain() {
   return (
-    <div className="items-center flex bg-blue-600 h-auto p-2">
-      <div className="flex-none w-14 h-14">
+    <div className="items-center flex  bg-slate-400 h-auto p-2">
+      <div className="flex-none w-40 h-14">
         <img
-          src="https://towa.com.vn/uploads/images/2021/06/286x75-1624605899-single_info36-cc.png"
-          alt="logo" className="w-32 m-3"
+          src="/images/logo/logo_towa.png"
+          alt="logo" className="w-40 h-15"
         />
       </div>
-      <div className="grow h-14 items-center text-center text-3xl font-bold text-stone-100 ">
-        <h1>TỔNG QUAN</h1>
+      <div className="grow h-auto items-center text-center text-3xl font-bold text-stone-100 ">
+        <h1>CỔNG THÔNG TIN TOWA</h1>
       </div>
       <div className="flex-none w-14 h-14">
         <Menu as="div" className="relative inline-block text-left">
