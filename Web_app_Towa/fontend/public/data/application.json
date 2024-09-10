@@ -7,11 +7,13 @@
     {
         "href": "Account",
         "p": "Kế toán",
-        "img": "https://example.com/img/technology.png"
+        "element":"Account",
+        "img": "/images/logo/logo_towa.png"
     },
     {
         "href": "Nhansu",
         "p": "Nhân sự",
+        "element":"Nhansu",
         "img": "https://example.com/img/healthcare.png"
     },
     {
