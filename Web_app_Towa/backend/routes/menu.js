@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Pool } = require('pg');
-import pool from '../config/database';
+const pool = require('../config/database'); // Kết nối đến cơ sở dữ liệu PostgreSQL
+
 
 
 // Route để lấy dữ liệu menu
