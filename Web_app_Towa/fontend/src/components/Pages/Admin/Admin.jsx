@@ -1,10 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export default function Admin(){
-    return (
-        <div>
-            Trang điều khiển
-        </div>
-    
-    )
-}
+const AdminPage = () => {
+    return <h2>Welcome Admin</h2>;
+};
+
+export default AdminPage;

@@ -1,20 +1,26 @@
-const cors = require('cors');
-const express = require('express');
-const dotenv = require('dotenv');
-const menuRoutes = require('./routes/menu'); // Đường dẫn tới file menu.js
-
-
-dotenv.config(); // Đọc biến môi trường từ file .env
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const sequelize = require("./config/database");
+const authRoutes = require("./routes/authRoutes/authRoutes");
 
 const app = express();
-
-app.use(express.json());
-// Kích hoạt CORS
 app.use(cors());
-// Sử dụng route menu
-app.use('/api', menuRoutes);
+app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Routes
+app.use("/api/auth", authRoutes);
+app.use((err, req, res, next) => {
+    console.error(err.stack);  // In ra lỗi chi tiết
+    res.status(500).send({ message: 'Internal Server Error', error: err.message });
 });
+
+// Kết nối database và chạy server
+sequelize
+  .sync()
+  .then(() => {
+    app.listen(5000, () => {
+      console.log("Server is running on port 5000");
+    });
+  })
+  .catch((error) => console.log("Database connection error:", error));

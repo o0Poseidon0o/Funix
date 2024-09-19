@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "10.10.10.51",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "database": "datatowa",
+            "username": "postgres",
+            "name": "datatowa"
+        }
+    ]
+}
