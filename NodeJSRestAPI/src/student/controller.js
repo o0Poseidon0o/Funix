@@ -34,9 +34,25 @@ const addStudent =(req,res)=>{
     })
 
 }
+
+const removeStudent=(req,res)=>{
+    const id = parseInt(req.params.id);
+
+    pool.query(qureies.getStudentsById,[id],(error,results)=>{
+        const noStudentFound = !results.rows.length;
+        if (noStudentFound){
+            res.send("Students does not exist in the database!!!")
+        }
+        pool.query(qureies.removeStudent,[id],(error,results)=>{
+            if(error) throw error;
+            res.status(200).send("Student removed successfully!!!")
+        })
+    })
+}
 module.exports={
     getStudents,
     getStudentsById,
-    addStudent
+    addStudent,
+    removeStudent
 }
 
