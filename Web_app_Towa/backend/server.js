@@ -1,25 +1,23 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const cors = require("cors");
-const sequelize = require("./config/database");
-const authRoutes = require("./routes/authRoutes/authRoutes");
-
+const sequelize = require("./src/config/database");
+const departmentRouters=require('./src/routes/department/departmentRoutes')
+require('dotenv').config();
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+// Middleware để xử lý dữ liệu JSON
+app.use(express.json());
 
-// Routes
-app.use("/api/auth", authRoutes);
-app.use((err, req, res, next) => {
-    console.error(err.stack);  // In ra lỗi chi tiết
-    res.status(500).send({ message: 'Internal Server Error', error: err.message });
-});
+
+// sử dụng route của phòng ban
+app.use('/api/departments',departmentRouters)
+
 
 // Kết nối database và chạy server
 sequelize
   .sync()
   .then(() => {
-    app.listen(5000, () => {
+    app.listen(process.env.DB_PORTSERVER, () => {
       console.log("Server is running on port 5000");
     });
   })
