@@ -1,6 +1,6 @@
 const {DataTypes} = require('sequelize');
 const squelize = require('../../config/database');
-const Role = require('./Role')// Do co khoa ngoai o bang Role
+const Roles = require('../Roles/modelRoles')// Do co khoa ngoai o bang Role
 const Departments= require('../Departments/departments') // Co khoa ngoai o bang departments
 
 const User=squelize.define('User',{
@@ -41,6 +41,6 @@ const User=squelize.define('User',{
   timestamps:false
 })
 
-User.belongsTo (Role,{foreignKey:'id_roles'});
+User.belongsTo (Roles,{foreignKey:'id_roles'});
 User.belongsTo(Departments,{foreignKey:'id_departments'})
 module.exports=User;
