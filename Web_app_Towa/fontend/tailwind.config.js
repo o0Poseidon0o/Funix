@@ -10,6 +10,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: ["light", "dark"], // Bổ sung 2 theme chính
+  },
 }
 

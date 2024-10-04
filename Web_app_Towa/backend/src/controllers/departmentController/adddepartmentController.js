@@ -3,6 +3,30 @@ const Departments = require('../../models/Departments/departments');
 const {Op} = require('sequelize');
 const XLSX = require('xlsx');
 
+
+//hàm hiển thị phòng ban
+const getAllDepartments = async (req, res) => {
+    try {
+        const departments = await Departments.findAll();
+
+        // Kiểm tra xem có phòng ban nào không
+        if (departments.length === 0) {
+            return res.status(404).json({ message: "Không có phòng ban nào." });
+        }
+
+        // Trả về dữ liệu dưới dạng JSON
+        res.status(200).json({
+            message: "Lấy danh sách phòng ban thành công.",
+            data: departments
+        });
+
+    } catch (error) {
+        console.error("Lỗi khi lấy danh sách phòng ban:", error);
+        res.status(500).json({ message: "Có lỗi xảy ra!", error: error.message });
+    }
+};
+
+//Hàm add phòng ban
 const addDepartment = async (req, res) => {
     const { id_departments, department_name, department_content } = req.body;
 
@@ -139,4 +163,9 @@ const uploadDepartmentsFromExcel = async (req, res) => {
     }
 };
 
-module.exports = { addDepartment,uploadDepartmentsFromExcel,searchDepartments,deleteDepartment,updateDepartment }; 
+module.exports = { addDepartment,
+    uploadDepartmentsFromExcel,
+    searchDepartments,
+    deleteDepartment,
+    updateDepartment,
+    getAllDepartments }; 

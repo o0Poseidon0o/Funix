@@ -8,6 +8,7 @@ router.post('/add',departmentController.addDepartment);
 router.get('/search',departmentController.searchDepartments)// tim kiem
 router.delete('/delete/:id',departmentController.deleteDepartment);// xoa
 router.put('/update/:id',departmentController.updateDepartment);
+router.get('/all-departments',departmentController.getAllDepartments)// Hiển thị tất cả phòng ban
 
 
 
