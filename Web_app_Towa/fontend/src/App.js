@@ -6,9 +6,11 @@ import Dashboard from "./views/Admin/AdminDashboard";
 import UserProfile from "./views/Users/Userprofiles";
 import AddUser from "./Layout/Users/AddUserRouter";
 import SettingUser from "./Layout/Users/SettingUserRouter";
-import RoleDepartmentRouter from "./Layout/RoleDepartmentRouter";
+import RoleDepartmentRouter from "./Layout/Department/RoleDepartmentRouter";
+import Department from "./Layout/Department/Department";
+
 // import Department from './views/RoleDepartment/RoleDepartment'
-import BookingCar from "./Layout/BookingcarRouter";
+import BookingCar from "./Layout/Bookingcar/BookingcarRouter";
 
 const App = () => {
   return (
@@ -21,6 +23,7 @@ const App = () => {
         <Route path="/Adduser/*" element={<AddUser />} />
         <Route path="/SettingUser/*" element={<SettingUser />} />
         <Route path="/RoleDepartment/*" element={<RoleDepartmentRouter />} />
+        <Route path="/Department/*" element={<Department />} />
         <Route path="/Bookingcar/*" element={<BookingCar />} />
       </Routes>
     </Router>

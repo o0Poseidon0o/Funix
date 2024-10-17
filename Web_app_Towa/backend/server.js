@@ -3,6 +3,8 @@ const cors = require("cors");
 const sequelize = require("./src/config/database");
 const departmentRouters=require('./src/routes/department/departmentRoutes');
 const rolesRoles=require('./src/routes/Roles/rolesrouters');
+const users=require('./src/routes/users/userRouters')
+
 require('dotenv').config();
 const app = express();
 app.use(cors());
@@ -12,9 +14,10 @@ app.use(express.json());
 
 // sử dụng route của phòng ban
 app.use('/api/departments',departmentRouters);
-
 app.use('/api/roles',rolesRoles);
-// Kết nối database và chạy server
+app.use('/api/users',users)
+
+
 sequelize
   .sync()
   .then(() => {

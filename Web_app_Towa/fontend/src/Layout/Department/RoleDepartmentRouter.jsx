@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import RoleDepartment from "../views/RoleDepartment/RoleDepartment"
+import RoleDepartment from "../../views/RoleDepartment/RoleDepartment"
 
 const RoleDepartmentRouter = () => {
   return (

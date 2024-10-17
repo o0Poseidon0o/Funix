@@ -1,54 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
-const RolesApllication = () => {
+const RolesApplication = () => {
+  // State để lưu thông tin role
+  const [role, setRole] = useState({
+    id_roles: '',
+    name_role: ''
+  });
+
+  // Hàm xử lý khi người dùng thay đổi input
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setRole({
+      ...role,
+      [name]: value
+    });
+  };
+
+  // Hàm xử lý khi submit form
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Ngăn không cho form reload lại trang
+    try {
+      // Gửi dữ liệu tới API
+      const response = await axios.post("http://localhost:5000/api/roles/add", role);
+      alert("Role added successfully!");
+      console.log("Response:", response.data);
+
+      // Reset form sau khi thêm role thành công
+      setRole({ id_roles: '', name_role: '' });
+    } catch (error) {
+      console.error("Error adding role:", error);
+      alert("Error adding role, please try again.");
+    }
+  };
+
   return (
-    <div className="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
-        <p className="text-xl pb-6 flex items-center">
-          <i className="fas fa-list mr-3"></i> Roles User
-        </p>
-        <div className="leading-loose">
-          <form className="p-10 bg-white rounded shadow-xl">
-            <div className="">
-              <label className="block text-sm text-gray-600" for="cus_name">
-                ID của Roles
-              </label>
-              <input
-                className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                id="cus_name"
-                name="cus_name"
-                type="text"
-                required=""
-                placeholder="Id Role"
-                aria-label="Name"
-              />
-            </div>
-            <div className="mt-2">
-              <label className="block text-sm text-gray-600" for="cus_email">
-                Tên Role
-              </label>
-              <input
-                className="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded"
-                id="cus_name"
-                name="cus_name"
-                type="text"
-                required=""
-                placeholder="Tên Role"
-                aria-label="Name_Role"
-              />
-            </div>
+    <div className="w-full lg:w-full mt-12 pl-0 lg:pl-2">
+      <p className="text-xl pb-6 flex items-center">
+        <i className="fas fa-list mr-3"></i> Roles User
+      </p>
+      <div className="leading-loose">
+        <form className="p-10 bg-white rounded shadow-xl" onSubmit={handleSubmit}>
+          <div className="">
+            <label className="block text-sm text-gray-600" htmlFor="id_roles">
+              ID của Roles
+            </label>
+            <input
+              className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+              id="id_roles"
+              name="id_roles"
+              type="text"
+              required
+              placeholder="Id Role"
+              value={role.id_roles}
+              onChange={handleInputChange}
+              aria-label="Role ID"
+            />
+          </div>
+          <div className="mt-2">
+            <label className="block text-sm text-gray-600" htmlFor="name_role">
+              Tên Role
+            </label>
+            <input
+              className="w-full px-5 py-4 text-gray-700 bg-gray-200 rounded"
+              id="name_role"
+              name="name_role"
+              type="text"
+              required
+              placeholder="Tên Role"
+              value={role.name_role}
+              onChange={handleInputChange}
+              aria-label="Role Name"
+            />
+          </div>
 
-            <div className="mt-6">
-              <button
-                className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                type="submit"
-              >
-                Add
-              </button>
-            </div>
-          </form>
-        </div>
-        </div>
+          <div className="mt-6">
+            <button
+              className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+              type="submit"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 
-export default RolesApllication;
+export default RolesApplication;

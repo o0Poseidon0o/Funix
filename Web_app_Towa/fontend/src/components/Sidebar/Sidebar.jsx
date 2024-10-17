@@ -180,7 +180,7 @@ export default function Sidebar() {
                   <li>
                     <Link
                       className="block px-4 py-2 text-blueGray-700 hover:text-red-600"
-                      to="/RoleDepartment/department"
+                      to="/Department"
                     >
                       Quản lý Phòng ban
                     </Link>

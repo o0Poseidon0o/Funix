@@ -1,7 +1,7 @@
 // controllers/departmentController.js
 const Departments = require('../../models/Departments/departments');
 const {Op} = require('sequelize');
-const XLSX = require('xlsx');
+
 
 
 //hàm hiển thị phòng ban
@@ -46,25 +46,32 @@ const addDepartment = async (req, res) => {
         // Trả về phản hồi thành công
         return res.status(201).json({ message: 'Department created successfully', department: newDepartment });
     } catch (error) {
-        return res.status(500).json({ message: 'Error creating department', error });
+        return res.status(500).json({ message: 'Có lỗi xảy ra khi tạo phòng ban.', error });
     }
 };
+
+
 
 // Hàm xử lý tìm kiếm
 const searchDepartments = async (req, res) => {
     try {
         const { name } = req.query; // Lấy tham số tìm kiếm từ query string
 
-        if (!name) {
-            return res.status(400).json({ message: "Vui lòng cung cấp tên phòng ban." });
+        // Kiểm tra nếu tham số name không tồn tại hoặc là chuỗi rỗng
+        if (!name || name.trim() === '') {
+            return res.status(400).json({ message: "Vui lòng cung cấp tên phòng ban hoặc ID." });
         }
+
+        // Kiểm tra xem `name` có phải là một số hay không
+        const isIdSearch = !isNaN(name);
+        const searchCriteria = isIdSearch ? { id_departments: Number(name) } : { department_name: { [Op.like]: `%${name}%` } };
 
         // Tìm kiếm trong cơ sở dữ liệu
         const departments = await Departments.findAll({
             where: {
-                department_name: {
-                    [Op.like]: `%${name}%` // Tìm kiếm với chuỗi giống nhau
-                }
+                [Op.or]: [
+                    searchCriteria
+                ]
             }
         });
 
@@ -77,10 +84,12 @@ const searchDepartments = async (req, res) => {
         res.status(200).json(departments);
 
     } catch (error) {
-        
+        console.error(error); // Ghi log lỗi để dễ dàng kiểm tra
         res.status(500).json({ message: "Có lỗi xảy ra!", error });
     }
 };
+
+
 
 
 // Xóa phòng ban
@@ -126,45 +135,10 @@ const updateDepartment = async (req, res) => {
     }
 };
 
-// Hàm xử lý upload file Excel
-const uploadDepartmentsFromExcel = async (req, res) => {
-    try {
-        // Đảm bảo file đã được upload
-        if (!req.file) {
-            return res.status(400).json({ message: 'No file uploaded' });
-        }
 
-        // Đọc file Excel từ bộ nhớ
-        const workbook = XLSX.read(req.file.buffer, { type: 'buffer' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
-
-        // Lặp qua từng dòng dữ liệu và thêm vào database
-        for (const row of sheet) {
-            const { id_departments, department_name, department_content } = row;
-
-            // Kiểm tra xem có đầy đủ dữ liệu không
-            if (!id_departments || !department_name || !department_content) {
-                return res.status(400).json({ message: 'Invalid data in Excel file' });
-            }
-
-            // Tạo phòng ban mới
-            await Departments.create({
-                id_departments,
-                department_name,
-                department_content
-            });
-        }
-
-        // Phản hồi thành công
-        return res.status(201).json({ message: 'Departments added successfully from Excel' });
-    } catch (error) {
-        return res.status(500).json({ message: 'Error processing Excel file', error });
-    }
-};
 
 module.exports = { addDepartment,
-    uploadDepartmentsFromExcel,
+    
     searchDepartments,
     deleteDepartment,
     updateDepartment,

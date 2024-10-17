@@ -1,18 +1,18 @@
-const {DataTypes}=require('sequelize');
-const squelize = require('../../config/database');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../../config/database');
 
+const Roles = sequelize.define('Roles', {
+  id_roles: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+  },
+  name_role: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+}, {
+  tableName: 'tb_roles',
+  timestamps: false,
+});
 
-const Roles =squelize.define('Roles',{
-    id_roles:{
-        type:DataTypes.INTEGER,
-        primaryKey:true
-    },
-    name_role:{
-        type:DataTypes.STRING,
-        allowNull:false
-    }
-},{
-    tableName:'tb_roles',
-    timestamps:false
-})
-module.exports= Roles;
+module.exports = Roles;
