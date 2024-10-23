@@ -15,6 +15,7 @@ const AddUser = () => {
     email_user: '',
     password_user: '',
   });
+  const [message, setMessage] = useState(""); // Thông báo phản hồi từ server
 
   // Hàm xử lý khi người dùng chọn file
   const handleFileChange = (event) => {
@@ -26,41 +27,83 @@ const AddUser = () => {
     setAvatarUrl(imageUrl);
   };
 
-  // Hàm xử lý khi người dùng upload file
-  const handleUpload = async (e) => {
+  // Hàm upload và submit dữ liệu người dùng
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Tạo FormData để upload ảnh
     const formData = new FormData();
-    formData.append("avatar", selectedFile);
+    if (selectedFile) {
+      formData.append("avatar", selectedFile);
+    }
+
+    // Thêm các dữ liệu người dùng vào FormData
+    formData.append("username", userData.username);
+    formData.append("email_user", userData.email_user);
+    formData.append("password_user", userData.password_user);
+    formData.append("id_departments", userData.id_departments);
+    formData.append("id_role", userData.id_role);
 
     try {
-      const response = await fetch(`/api/users/upload-avatar/{userId}`, {
+      const response = await fetch(`/api/users/add`, {
         method: "POST",
         body: formData,
       });
       const data = await response.json();
-      console.log(data); // Xử lý phản hồi từ server
+      if (response.ok) {
+        setMessage("Người dùng đã được thêm thành công!");
+        // Reset form sau khi thêm người dùng thành công
+        setUserData({
+          id_users:'',
+          id_departments: '',
+          id_role: '',
+          username: '',
+          email_user: '',
+          password_user: '',
+        });
+        setSelectedFile(null);
+        setAvatarUrl("https://ilarge.lisimg.com/image/21867558/1118full-hyakujuu-sentai-gaoranger-photo.jpg");
+      } else {
+        setMessage(`Lỗi: ${data.message}`);
+      }
     } catch (error) {
-      console.error("Error uploading avatar:", error);
+      console.error("Error adding user:", error);
+      setMessage("Đã xảy ra lỗi trong quá trình thêm người dùng.");
     }
   };
 
-  // Hàm để lấy danh sách bộ phận và vai trò
   const fetchDepartmentsAndRoles = async () => {
     try {
       const [departmentsResponse, rolesResponse] = await Promise.all([
-        fetch('/api/departments'),
-        fetch('/api/roles'),
+        fetch('http://localhost:5000/api/departments/all-departments'),
+        fetch('http://localhost:5000/api/roles/all-roles'),
       ]);
-
+  
       const departmentsData = await departmentsResponse.json();
       const rolesData = await rolesResponse.json();
-
-      setDepartments(departmentsData);
-      setRoles(rolesData);
+  
+      // Kiểm tra dữ liệu của các bộ phận
+      console.log("Departments Data:", departmentsData);
+      if (Array.isArray(departmentsData)) {
+        setDepartments(departmentsData);
+      } else {
+        console.error("Departments API did not return an array:", departmentsData);
+        setDepartments([]);
+      }
+  
+      // Kiểm tra dữ liệu của các vai trò
+      console.log("Roles Data:", rolesData);
+      if (Array.isArray(rolesData)) {
+        setRoles(rolesData);
+      } else {
+        console.error("Roles API did not return an array:", rolesData);
+        setRoles([]);
+      }
     } catch (error) {
       console.error("Error fetching departments and roles:", error);
     }
   };
+  
 
   // Gọi API khi component được mount
   useEffect(() => {
@@ -82,12 +125,12 @@ const AddUser = () => {
         <div className="leading-loose">
           <form
             className="p-10 bg-white rounded shadow-xl"
-            onSubmit={handleUpload}
+            onSubmit={handleSubmit} // Sử dụng handleSubmit thay vì handleUpload
           >
             <img
               src={avatarUrl} // Hiển thị ảnh được chọn
               alt="avatar"
-              className="mb-4"
+              className="mb-4 w-40 h-full object-cover rounded-md"
             />
             <div className="mt-4">
               <input
@@ -102,9 +145,10 @@ const AddUser = () => {
                 className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
                 type="submit"
               >
-                Upload
+                Thêm Người Dùng
               </button>
             </div>
+            {message && <p className="mt-4 text-red-500">{message}</p>} {/* Thông báo phản hồi */}
           </form>
         </div>
       </div>
@@ -114,7 +158,7 @@ const AddUser = () => {
           <i className="fas fa-list mr-3"></i> Form User
         </p>
         <div className="leading-loose">
-          <form className="p-10 bg-white rounded shadow-xl">
+          <form className="p-10 bg-white rounded shadow-xl" onSubmit={handleSubmit}>
           <div className="mt-2">
               <label className="block text-sm text-gray-600" htmlFor="username">
                 Số hiệu
@@ -125,8 +169,8 @@ const AddUser = () => {
                 name="username"
                 type="text"
                 required
-                placeholder="Tên người dùng"
-                value={userData.username}
+                placeholder="Số hiệu"
+                value={userData.id_users}
                 onChange={handleChange}
                 aria-label="Username"
               />
@@ -193,11 +237,15 @@ const AddUser = () => {
                 aria-label="Department"
               >
                 <option value="">Chọn bộ phận</option>
-                {departments.map(department => (
-                  <option key={department.id_departments} value={department.id_departments}>
-                    {department.department_name}
-                  </option>
-                ))}
+                {departments.length > 0 ? (
+                  departments.map(department => (
+                    <option key={department.id_departments} value={department.id_departments}>
+                      {department.department_name}
+                    </option>
+                  ))
+                ) : (
+                  <option disabled>Không có bộ phận nào</option>
+                )}
               </select>
             </div>
             <div className="mt-2">
@@ -214,20 +262,16 @@ const AddUser = () => {
                 aria-label="Role"
               >
                 <option value="">Chọn vai trò</option>
-                {roles.map(role => (
-                  <option key={role.id_roles} value={role.id_roles}>
-                    {role.role_name}
-                  </option>
-                ))}
+                {roles.length > 0 ? (
+                  roles.map(role => (
+                    <option key={role.id_roles} value={role.id_roles}>
+                      {role.name_role}
+                    </option>
+                  ))
+                ) : (
+                  <option disabled>Không có vai trò nào</option>
+                )}
               </select>
-            </div>
-            <div className="mt-6">
-              <button
-                className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                type="submit"
-              >
-                Submit
-              </button>
             </div>
           </form>
         </div>

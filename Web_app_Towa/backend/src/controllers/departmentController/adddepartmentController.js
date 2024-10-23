@@ -14,11 +14,8 @@ const getAllDepartments = async (req, res) => {
             return res.status(404).json({ message: "Không có phòng ban nào." });
         }
 
-        // Trả về dữ liệu dưới dạng JSON
-        res.status(200).json({
-            message: "Lấy danh sách phòng ban thành công.",
-            data: departments
-        });
+       // Trả về dữ liệu dưới dạng JSON với danh sách phòng ban trực tiếp
+       res.status(200).json(departments);
 
     } catch (error) {
         console.error("Lỗi khi lấy danh sách phòng ban:", error);

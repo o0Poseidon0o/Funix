@@ -1,5 +1,8 @@
-const User = require ("../../models/Users/User")
-const { Op } = require('sequelize');
+const User = require("../../models/Users/User");
+const Department = require("../../models/Departments/departments"); // Đảm bảo import mô hình Department
+const Role = require("../../models/Roles/modelRoles"); // Đảm bảo import mô hình Role
+const bcrypt = require("bcrypt");
+const { Op } = require("sequelize");
 
 // Thêm người dùng
 const addUser = async (req, res) => {
@@ -18,21 +21,46 @@ const addUser = async (req, res) => {
       return res.status(400).json({ message: 'Invalid user ID. ID must be a positive integer.' });
     }
 
+    // Kiểm tra email hợp lệ
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email_user)) {
+      return res.status(400).json({ message: 'Invalid email format.' });
+    }
+
+    // Mã hóa mật khẩu
+    const hashedPassword = await bcrypt.hash(password_user, 10);
+
+    // Kiểm tra tồn tại bộ phận và vai trò
+    const departmentExists = await Department.findOne({ where: { id: id_departments } });
+    const roleExists = await Role.findOne({ where: { id: id_roles } });
+
+    if (!departmentExists) {
+      return res.status(400).json({ message: 'Invalid department ID.' });
+    }
+    if (!roleExists) {
+      return res.status(400).json({ message: 'Invalid role ID.' });
+    }
+
     // Thêm người dùng
     const newUser = await User.create({
       id_users, // ID nhập vào
       avatar,
       username,
       email_user,
-      password_user,
+      password_user: hashedPassword, // Sử dụng mật khẩu đã mã hóa
       id_departments,
       id_roles,
     });
     res.status(201).json({ message: 'User added successfully', user: newUser });
   } catch (error) {
-    res.status(500).json({ message: 'Error adding user', error });
+    console.error('Error adding user:', error);
+    res.status(500).json({ message: 'Error adding user', error: error.message });
   }
 };
+
+module.exports = { addUser };
+
+
 
 // Sửa người dùng
 const updateUser = async (req, res) => {
