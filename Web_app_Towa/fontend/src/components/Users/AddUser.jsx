@@ -45,7 +45,7 @@ const AddUser = () => {
     formData.append("id_role", userData.id_role);
 
     try {
-      const response = await fetch(`/api/users/add`, {
+      const response = await fetch(`http://localhost:5000/api/users/add`, {
         method: "POST",
         body: formData,
       });
@@ -160,19 +160,19 @@ const AddUser = () => {
         <div className="leading-loose">
           <form className="p-10 bg-white rounded shadow-xl" onSubmit={handleSubmit}>
           <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="username">
+              <label className="block text-sm text-gray-600" htmlFor="id_users">
                 Số hiệu
               </label>
               <input
                 className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                id="username"
-                name="username"
+                id="id_users"
+                name="id_users"
                 type="text"
                 required
                 placeholder="Số hiệu"
                 value={userData.id_users}
                 onChange={handleChange}
-                aria-label="Username"
+                aria-label="id_users"
               />
             </div>
             <div className="mt-2">

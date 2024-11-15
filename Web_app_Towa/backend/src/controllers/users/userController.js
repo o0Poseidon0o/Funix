@@ -10,6 +10,14 @@ const addUser = async (req, res) => {
   const avatar = req.file ? `/upload/avatars/${req.file.filename}` : null; // Lấy đường dẫn của avatar
 
   try {
+    // Kiểm tra giá trị đầu vào
+    console.log("Request body:", req.body); // In toàn bộ thông tin từ body
+    console.log("Avatar file:", req.file); // In thông tin file upload (nếu có)
+    // Kiểm tra giá trị của id_users
+    if (!id_users) {
+      return res.status(400).json({ message: 'User ID is required.' });
+    }
+
     // Kiểm tra xem ID đã tồn tại hay chưa
     const existingUser = await User.findOne({ where: { id_users } });
     if (existingUser) {
@@ -31,8 +39,8 @@ const addUser = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password_user, 10);
 
     // Kiểm tra tồn tại bộ phận và vai trò
-    const departmentExists = await Department.findOne({ where: { id: id_departments } });
-    const roleExists = await Role.findOne({ where: { id: id_roles } });
+    const departmentExists = await Department.findOne({ where: { id_departments } });
+    const roleExists = await Role.findOne({ where: { id_roles } });
 
     if (!departmentExists) {
       return res.status(400).json({ message: 'Invalid department ID.' });
@@ -57,6 +65,7 @@ const addUser = async (req, res) => {
     res.status(500).json({ message: 'Error adding user', error: error.message });
   }
 };
+
 
 module.exports = { addUser };
 
