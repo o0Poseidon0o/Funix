@@ -8,9 +8,11 @@ import AddUser from "./Layout/Users/AddUserRouter";
 import SettingUser from "./Layout/Users/SettingUserRouter";
 import RoleDepartmentRouter from "./Layout/Department/RoleDepartmentRouter";
 import Department from "./Layout/Department/Department";
+import DataentryRouter from "./Layout/Dataentry/DataentryRouter";
+import ChartRouter from "./Layout/Chart/ChartRouter";
 
-// import Department from './views/RoleDepartment/RoleDepartment'
-import BookingCar from "./Layout/Bookingcar/BookingcarRouter";
+
+
 
 const App = () => {
   return (
@@ -24,7 +26,8 @@ const App = () => {
         <Route path="/SettingUser/*" element={<SettingUser />} />
         <Route path="/RoleDepartment/*" element={<RoleDepartmentRouter />} />
         <Route path="/Department/*" element={<Department />} />
-        <Route path="/Bookingcar/*" element={<BookingCar />} />
+        <Route path="/Dataentry/*" element={<DataentryRouter />} />
+        <Route path="/Chartview/*" element={<ChartRouter/>} />
       </Routes>
     </Router>
   );

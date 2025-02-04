@@ -155,7 +155,7 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Ứng dụng
+              Quản lý
             </h6>
             {/* Navigation */}
 
@@ -229,7 +229,7 @@ export default function Sidebar() {
               <li className="relative group">
                 <a className="text-blueGray-700 hover:text-red-600 text-xs uppercase py-3 font-bold block">
                   <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>{" "}
-                  Đặt xe
+                  Nhập liệu BCDB
                 </a>
 
                 {/* Menu con */}
@@ -237,17 +237,17 @@ export default function Sidebar() {
                   <li>
                     <Link
                       className="block px-4 py-2 text-blueGray-700 hover:text-red-600 hover:text-red-600"
-                      to="/Bookingcar"
+                      to="/Dataentry"
                     >
-                      Lịch đặt xe
+                      Lịch nhập liệu
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="block px-4 py-2 text-blueGray-700 hover:text-red-600 hover:text-red-600"
-                      to="/"
+                      to="/Chartview"
                     >
-                      Đặt xe
+                      Tổng hợp
                     </Link>
                   </li>
                 </ul>

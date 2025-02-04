@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const BookingCar = () => {
+const DataEntry = () => {
   const MONTH_NAMES = [
     "January",
     "February",
@@ -21,30 +21,26 @@ const BookingCar = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const [noOfDays, setNoOfDays] = useState([]);
   const [blankDays, setBlankDays] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [rows, setRows] = useState([
+    { stepCode: "", quantity: "", time: "", totalTime: "" },
+  ]);
 
   useEffect(() => {
     getNoOfDays();
   }, [month, year]);
-
-  const initDate = () => {
-    setMonth(new Date().getMonth());
-    setYear(new Date().getFullYear());
-  };
 
   const getNoOfDays = () => {
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const dayOfWeek = new Date(year, month).getDay();
 
     let blankdaysArray = [];
-    for (let i = 1; i <= dayOfWeek; i++) {
-      blankdaysArray.push(i);
-    }
+    for (let i = 1; i <= dayOfWeek; i++) blankdaysArray.push(i);
 
     let daysArray = [];
-    for (let i = 1; i <= daysInMonth; i++) {
-      daysArray.push(i);
-    }
+    for (let i = 1; i <= daysInMonth; i++) daysArray.push(i);
 
     setBlankDays(blankdaysArray);
     setNoOfDays(daysArray);
@@ -56,14 +52,43 @@ const BookingCar = () => {
     return today.toDateString() === d.toDateString();
   };
 
-  const showEventModal = (date) => {
-    // Implement modal logic here if needed
+  const openModal = (date) => {
+    setSelectedDate(date);
+    setIsModalOpen(true);
+    setShowSuccessMessage(false);
+    setRows([{ stepCode: "", quantity: "", time: "", totalTime: "" }]);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedDate(null);
+    setShowSuccessMessage(false);
+  };
+
+  const handleAddRow = () => {
+    setRows([...rows, { stepCode: "", quantity: "", time: "", totalTime: "" }]);
+  };
+
+  const handleRowChange = (index, field, value) => {
+    const updatedRows = [...rows];
+    updatedRows[index][field] = value;
+    setRows(updatedRows);
+  };
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+      closeModal();
+    }, 3000);
+    console.log("Dữ liệu đã lưu:", rows);
   };
 
   return (
     <div className="w-full h-screen overflow-x-hidden flex flex-col">
       <main className="w-full flex-grow p-6">
-        <h1 className="text-3xl text-black pb-6">Lịch đặt xe</h1>
+        <h1 className="text-3xl text-red-400 pb-6">Lịch nhập liệu</h1>
 
         <div className="w-full">
           <div className="antialiased sans-serif bg-gray-100">
@@ -88,9 +113,7 @@ const BookingCar = () => {
                         month === 0 ? "cursor-not-allowed opacity-25" : ""
                       }`}
                       disabled={month === 0}
-                      onClick={() => {
-                        setMonth(month - 1);
-                      }}
+                      onClick={() => setMonth(month - 1)}
                     >
                       <svg
                         className="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -113,9 +136,7 @@ const BookingCar = () => {
                         month === 11 ? "cursor-not-allowed opacity-25" : ""
                       }`}
                       disabled={month === 11}
-                      onClick={() => {
-                        setMonth(month + 1);
-                      }}
+                      onClick={() => setMonth(month + 1)}
                     >
                       <svg
                         className="h-6 w-6 text-gray-500 inline-flex leading-none"
@@ -164,7 +185,7 @@ const BookingCar = () => {
                         className="w-[14.28%] h-20 sm:h-32 text-center border-r border-b px-4 pt-2 relative"
                       >
                         <div
-                          onClick={() => showEventModal(date)}
+                          onClick={() => openModal(date)}
                           className={`inline-flex w-6 h-6 sm:w-8 sm:h-8 items-center justify-center cursor-pointer text-center leading-none rounded-full transition ease-in-out duration-100 ${
                             isToday(date)
                               ? "bg-blue-500 text-white"
@@ -172,12 +193,6 @@ const BookingCar = () => {
                           }`}
                         >
                           {date}
-                        </div>
-                        <div
-                          className="overflow-y-auto mt-1"
-                          style={{ height: "60px" }}
-                        >
-                          {/* Render events here */}
                         </div>
                       </div>
                     ))}
@@ -188,8 +203,111 @@ const BookingCar = () => {
           </div>
         </div>
       </main>
+
+      {/* Modal */}
+      <input
+        type="checkbox"
+        id="booking-modal"
+        className="modal-toggle"
+        checked={isModalOpen}
+        onChange={() => {}}
+      />
+      <div className="modal">
+        <div className="modal-box w-full max-w-4xl px-4 sm:px-8">
+          <h3 className="font-bold text-lg">
+            Nhập liệu cho ngày {selectedDate}
+          </h3>
+          <form onSubmit={handleSave}>
+            <div className="flex flex-wrap sm:flex-nowrap space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
+              {/* Labels, chỉ một lần */}
+              <div className="flex-1">
+                <label className="label">
+                  <span className="label-text">Mã công đoạn</span>
+                </label>
+              </div>
+              <div className="flex-1">
+                <label className="label">
+                  <span className="label-text">Số lượng</span>
+                </label>
+              </div>
+              <div className="flex-1">
+                <label className="label">
+                  <span className="label-text">Thời gian</span>
+                </label>
+              </div>
+              
+            </div>
+
+            {/* Dòng dữ liệu, lặp qua từng dòng */}
+            {rows.map((row, index) => (
+              <div
+                key={index}
+                className="flex flex-wrap sm:flex-nowrap space-y-4 sm:space-y-0 sm:space-x-4 mb-4"
+              >
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Mã công đoạn"
+                    className="input input-bordered w-full"
+                    value={row.stepCode}
+                    onChange={(e) =>
+                      handleRowChange(index, "stepCode", e.target.value)
+                    }
+                  />
+                </div>
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Số lượng"
+                    className="input input-bordered w-full"
+                    value={row.quantity}
+                    onChange={(e) =>
+                      handleRowChange(index, "quantity", e.target.value)
+                    }
+                  />
+                </div>
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Thời gian gia công"
+                    className="input input-bordered w-full"
+                    value={row.time}
+                    onChange={(e) =>
+                      handleRowChange(index, "time", e.target.value)
+                    }
+                  />
+                </div>
+                
+              </div>
+            ))}
+
+            <button
+              type="button"
+              className="btn btn-sm btn-outline mb-4"
+              onClick={handleAddRow}
+            >
+              Thêm dòng
+            </button>
+
+            {showSuccessMessage && (
+              <div className="alert alert-success mb-4">
+                <span>Lưu thành công!</span>
+              </div>
+            )}
+
+            <div className="modal-action">
+              <button type="button" className="btn" onClick={closeModal}>
+                Đóng
+              </button>
+              <button type="submit" className="btn btn-primary">
+                Lưu
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default BookingCar;
+export default DataEntry;
