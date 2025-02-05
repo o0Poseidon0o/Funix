@@ -10,6 +10,10 @@ const User = sequelize.define(
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
