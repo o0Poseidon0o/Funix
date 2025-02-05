@@ -1,0 +1,293 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|c:\\users\\admins\\desktop\\tmdt\\tmdt\\tmdt\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admins\\Desktop\\TMDTLaptop\\TMDTLaptop\\TMDTLaptop\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admins\\Desktop\\dh\\Views\\Home\\CuaHang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\home\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\home\\giohang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\admin\\themvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\admin\\themvoucher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\admin\\suasanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\admin\\suasanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\admin\\suahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\admin\\suahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\home\\cuahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\home\\cuahang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\shared\\_layouthome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\shared\\_partialfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\shared\\_partialfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\admin\\quanlybanner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\admin\\quanlybanner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\tmdt\\views\\shared\\_partialheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BC3F3436-6013-46A5-A21D-24056CBA3674}|TMDT\\TMDT.csproj|solutionrelative:tmdt\\views\\shared\\_partialheader.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 11,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDTLaptop\\TMDTLaptop\\TMDTLaptop\\Web.config",
+              "RelativeDocumentMoniker": "..\\..\\TMDTLaptop\\TMDTLaptop\\TMDTLaptop\\Web.config",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDTLaptop\\TMDTLaptop\\TMDTLaptop\\Web.config",
+              "RelativeToolTip": "..\\..\\TMDTLaptop\\TMDTLaptop\\TMDTLaptop\\Web.config",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-04T13:08:14.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Web.config",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Web.config",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Web.config",
+              "RelativeToolTip": "TMDT\\Views\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-04T07:12:13.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GioHang.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\GioHang.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Home\\GioHang.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\GioHang.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Home\\GioHang.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T05:44:38.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ThemVoucher.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\ThemVoucher.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Admin\\ThemVoucher.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\ThemVoucher.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Admin\\ThemVoucher.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T05:42:30.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SuaSanPham.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\SuaSanPham.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Admin\\SuaSanPham.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\SuaSanPham.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Admin\\SuaSanPham.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T15:23:29.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_LayoutHome.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_LayoutHome.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Shared\\_LayoutHome.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_LayoutHome.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Shared\\_LayoutHome.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T13:31:49.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Web.config",
+              "RelativeDocumentMoniker": "TMDT\\Web.config",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Web.config",
+              "RelativeToolTip": "TMDT\\Web.config",
+              "ViewState": "AQIAADkAAAAAAAAAAAAUwEsAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-03T06:29:34.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "TMDT\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "TMDT\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAawBMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:10:22.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CuaHang.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\dh\\Views\\Home\\CuaHang.cshtml",
+              "RelativeDocumentMoniker": "..\\..\\dh\\Views\\Home\\CuaHang.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\dh\\Views\\Home\\CuaHang.cshtml",
+              "RelativeToolTip": "..\\..\\dh\\Views\\Home\\CuaHang.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T07:41:05.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_PartialFooter.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_PartialFooter.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Shared\\_PartialFooter.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_PartialFooter.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Shared\\_PartialFooter.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEAAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T13:11:22.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CuaHang.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\CuaHang.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Home\\CuaHang.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\CuaHang.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Home\\CuaHang.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAADgAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T13:10:25.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Home\\About.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T13:10:00.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SuaHang.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\SuaHang.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Admin\\SuaHang.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\SuaHang.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Admin\\SuaHang.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T15:23:28.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAYwJEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T06:40:59.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "TMDT\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "TMDT\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAADYCAAAAAAAAAAD4vz4CAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T06:16:34.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "QuanLyBanner.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\QuanLyBanner.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Admin\\QuanLyBanner.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Admin\\QuanLyBanner.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Admin\\QuanLyBanner.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T13:21:26.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_PartialHeader.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_PartialHeader.cshtml",
+              "RelativeDocumentMoniker": "TMDT\\Views\\Shared\\_PartialHeader.cshtml",
+              "ToolTip": "C:\\Users\\Admins\\Desktop\\TMDT\\TMDT\\TMDT\\Views\\Shared\\_PartialHeader.cshtml",
+              "RelativeToolTip": "TMDT\\Views\\Shared\\_PartialHeader.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T06:18:31.27Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

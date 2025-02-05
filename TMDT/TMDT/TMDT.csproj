@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC3F3436-6013-46A5-A21D-24056CBA3674}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMDTLaptop</RootNamespace>
+    <AssemblyName>TMDTLaptop</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44373</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.4.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.4.1\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-adapter, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.bouncy-castle-adapter.8.0.5\lib\net461\itext.bouncy-castle-adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.5\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextAsian, Version=2.1.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.iTextAsian.2.1.0\lib\netstandard2.0\iTextAsian.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ChamSocKHController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NVController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Banner.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BestSellingProduct.cs" />
+    <Compile Include="Models\ChiTietDonHang.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietGioHang.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietPhieuNhapKho.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DanhMucSanPham.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonHang.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HangSanPham.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Messages.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuNhapKho.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Quyen.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RevenueByCategoryViewModel.cs" />
+    <Compile Include="Models\RevenueByProductViewModel.cs" />
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Voucher.cs">
+      <DependentUpon>Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\img\loading.gif" />
+    <Content Include="assets\css\img\video-play.png" />
+    <Content Include="assets\css\img\vimeo-play.png" />
+    <Content Include="assets\css\img\youtube-play.png" />
+    <Content Include="assets\css\plugins\animate.css" />
+    <Content Include="assets\css\plugins\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\css\plugins\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\css\plugins\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\css\plugins\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\css\plugins\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\css\plugins\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\plugins\jquery-ui.min.css" />
+    <Content Include="assets\css\plugins\lightgallery.min.css" />
+    <Content Include="assets\css\plugins\nice-select.css" />
+    <Content Include="assets\css\plugins\slick.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\vendor\bootstrap.min.css" />
+    <Content Include="assets\css\vendor\font-awesome.css" />
+    <Content Include="assets\css\vendor\fontawesome-stars.css" />
+    <Content Include="assets\css\vendor\ion-fonts.css" />
+    <Content Include="assets\fonts\fa-brands-400.svg" />
+    <Content Include="assets\fonts\fa-regular-400.svg" />
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\ionicons28b5.svg" />
+    <Content Include="assets\fonts\lgd641.svg" />
+    <Content Include="assets\images\banner\banner1.jpg" />
+    <Content Include="assets\images\banner\banner2.jpg" />
+    <Content Include="assets\images\banner\banner3.jpg" />
+    <Content Include="assets\images\banner\banner3.png" />
+    <Content Include="assets\images\banner\bannerlienhe.jpg" />
+    <Content Include="assets\images\banner\banner_web_slider_800x400_7b486e59502946e49437262c3f61cef3.jpg" />
+    <Content Include="assets\images\banner\gearvn-tet-slider.jpg" />
+    <Content Include="assets\images\banner\head-gear_0f3bdf6468af4090bc79785c23bf1c0b.jpg" />
+    <Content Include="assets\images\banner\laptop.jpg" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\product\10\aorus_gen4_5000e_ssd_500gb-01_6ef637a2a06e4d0cb8cd545c868aaf50_grande.jpg" />
+    <Content Include="assets\images\product\10\aorus_gen4_5000e_ssd_500gb-02_cd0065a2ad8d47ca9b72711cd9f802de_compact.jpg" />
+    <Content Include="assets\images\product\10\aorus_gen4_5000e_ssd_500gb-05_14698c4d7b5e42b3bd5a1f882c365f3d_compact.jpg" />
+    <Content Include="assets\images\product\11\ca-1t9-00m1wn-01_1_f13074b6a8f945408be4318872e52f0a_grande.jpg" />
+    <Content Include="assets\images\product\11\ca-1t9-00m1wn-01_2_3d32808ff9bb42878507fae78b76ca64_compact.jpg" />
+    <Content Include="assets\images\product\11\ca-1t9-00m1wn-01_3_7ea9e2ee0ccc460e89c64c1f9651435e_compact.jpg" />
+    <Content Include="assets\images\product\12\1_copy_476ed181911344aa834d1679edc39186_compact.jpg" />
+    <Content Include="assets\images\product\12\3_copy_7da2075cd4054b178abb3ea4c49bab20_compact.jpg" />
+    <Content Include="assets\images\product\12\9_copy_cbf7b89b439e480e9c39519a6ea5c775_grande.jpg" />
+    <Content Include="assets\images\product\13\1024_8a2e537b989a42b8a9795ba6cb3be1da_grande.jpg" />
+    <Content Include="assets\images\product\13\1024__1__15aa607ec0044a8994a0015f97465a45_compact.jpg" />
+    <Content Include="assets\images\product\13\1024__2__e4100c4ba60a4a499198f168c8944e15_compact.jpg" />
+    <Content Include="assets\images\product\14\smart__1__14f9dfb8a0f94884826522f2ecd0b52b_grande.jpg" />
+    <Content Include="assets\images\product\14\smart__4__bcdc7e734d34462abe448b7beb342f09_grande.jpg" />
+    <Content Include="assets\images\product\14\smart__5__fb081ff9ed234e2bb6b395b28c0fdde6_compact.jpg" />
+    <Content Include="assets\images\product\15\titan_240_rx_rgb_black_render_01_f324a771e18e4c9990ea1ae33c706d39_grande.jpg" />
+    <Content Include="assets\images\product\16\gvn07935__1__b0b39d0512b4419f8c2a729bcb170881_grande.jpg" />
+    <Content Include="assets\images\product\16\_dsc0028_4a93819c8ecc4d41a73e0c900b830e78_551a79e9341c4e28bdc039ba0ea707ff_grande.jpg" />
+    <Content Include="assets\images\product\16\_dsc0083_b6df1dc4e4364f2ca8112b03b8e3406d_41c66841706d429087a17a3c935f17b5_grande.jpg" />
+    <Content Include="assets\images\product\17\gvn07935__1__b0b39d0512b4419f8c2a729bcb170881_grande.jpg" />
+    <Content Include="assets\images\product\17\_dsc0028_4a93819c8ecc4d41a73e0c900b830e78_551a79e9341c4e28bdc039ba0ea707ff_grande.jpg" />
+    <Content Include="assets\images\product\17\_dsc0083_b6df1dc4e4364f2ca8112b03b8e3406d_41c66841706d429087a17a3c935f17b5_grande.jpg" />
+    <Content Include="assets\images\product\18\pc_gvn_viper_i3060_gen_13_-_3_a7538c02de68412d8a7a4c8626c1b51b_grande.jpg" />
+    <Content Include="assets\images\product\18\post-01_28478545380a46d688f5a8dade074a07_grande.jpg" />
+    <Content Include="assets\images\product\18\post-15_82e2a5c014c3481ea73077612d026b52_grande.jpg" />
+    <Content Include="assets\images\product\19\cmp_b9ff1747363741a58c1bfb30812ad411_grande.jpg" />
+    <Content Include="assets\images\product\19\gearvn-gvn-phantom-i3060-__4__b253b01d29944d0dbdd86483f36521c7_ea508ea074a8475c947869873f8c71e5_grande.jpg" />
+    <Content Include="assets\images\product\19\gvn00996_304119908f124ca08096c17867946c7c_grande.jpg" />
+    <Content Include="assets\images\product\1\pp059w_f967e9d44fc045e0abecc2cce05b2669_grande.jpg" />
+    <Content Include="assets\images\product\1\_vivobook_s_14_oled_s5406sa-pp059ws-2_88171c4e68824e19a135f4433260280a_6078a21aa06c4cea93e050e73521d407_compact.jpg" />
+    <Content Include="assets\images\product\1\_vivobook_s_14_oled_s5406sa-pp059ws-3_f9b71aa2454548f3bf6a1cefff632dbc_8bad52751dbd49c18361135558d0744a_compact.jpg" />
+    <Content Include="assets\images\product\20\5000d_white_aero_d254c2c1d006470dad47a5a4b6c116e8_1024x1024.jpg" />
+    <Content Include="assets\images\product\20\post-01_c3b3ab5bf4ce4b408028324dab7dd072_grande.jpg" />
+    <Content Include="assets\images\product\20\post-19_36e49392d54a4addbff3c088be504cae_grande.jpg" />
+    <Content Include="assets\images\product\21\pc_gvn_gr701_white_-_1_bcbdc8851d004e2e9c7e226a1ea263bf_grande.jpg" />
+    <Content Include="assets\images\product\21\pc_gvn_gr701_white_-_4_94e777f0e20c47f3aa4a8756456e07c9_grande.jpg" />
+    <Content Include="assets\images\product\21\pc_gvn_gr701_white_-_5_fbf7b15f37ca4caca0f4b3c53ee5c003_grande.jpg" />
+    <Content Include="assets\images\product\22\asus_xg27ucg_gearvn_dc91678e3a604d00907d30432cca83ff_grande.jpg" />
+    <Content Include="assets\images\product\22\rog-strix-xg27ucg-04_515c3445c3204e7b8cadbf6407e1fad4_grande.jpg" />
+    <Content Include="assets\images\product\22\rog-strix-xg27ucg-05_bb21ea91fe3a4106ab2450c9ebb41a16_grande.jpg" />
+    <Content Include="assets\images\product\23\gearvn-chuot-logitech-g-pro-x-superlight-2-dex-wireless-black-1_308e73fe70324e739ea2ad7e3903ce43_compact.jpg" />
+    <Content Include="assets\images\product\23\gearvn-chuot-logitech-g-pro-x-superlight-2-dex-wireless-black-3_3515c0723dfe418ba7b5c85c48fd8826_compact.jpg" />
+    <Content Include="assets\images\product\23\pro-x-superlight-2-dex-black-gal_8e2163b06e86419eb2f99ecb7dccda8f_grande.jpg" />
+    <Content Include="assets\images\product\24\5mcsgas4_32ac8fe0d75c469292dab3e5a70e9ca6_grande.jpg" />
+    <Content Include="assets\images\product\24\9beeg1nb_5d816c94d9a346f3b608e9ea5dec0d56_compact.jpg" />
+    <Content Include="assets\images\product\24\yv313v6e_d7faa0310a0c4dcc81dd952872f79d09_grande.jpg" />
+    <Content Include="assets\images\product\2\n7430i58w1_97351009345a4702bf2d4edbf560bc3f_grande.jpg" />
+    <Content Include="assets\images\product\2\notebook-inspiron-14-7430-silver-fpr-gallery-2_775d712dd05041e7b1cdabfcee5579ac_compact.jpg" />
+    <Content Include="assets\images\product\2\notebook-inspiron-14-7430-silver-fpr-gallery-5_a67556c51bef417db7384474189ff584_compact.jpg" />
+    <Content Include="assets\images\product\3\aptop-hp-pavilion-15-eg0506tx-46m05pa_3f2e2cb97f6b4ed192752aa774e1b9b4_7514240edc9a4ee98c2f88b18c0fc039_grande.jpg" />
+    <Content Include="assets\images\product\3\top-hp-pavilion-15-eg0506tx-46m05pa-1_a04f18486f014aa38e272a7d85460bda_938e2d4541b741aeb6869212713d08d3_compact.jpg" />
+    <Content Include="assets\images\product\3\top-hp-pavilion-15-eg0506tx-46m05pa-2_8b54d9c584924366a0a6a3bd9e5c74f7_b808000e08264c4682f5c3323dc21d9e_compact.jpg" />
+    <Content Include="assets\images\product\4\1024__1__984a2f3a7c2f4b798dc0cd3bf6d7e098_grande.jpg" />
+    <Content Include="assets\images\product\4\1024__2__8a469d3acdca4e22ad5011d985339930_grande.jpg" />
+    <Content Include="assets\images\product\4\ava_9f543d3a40a040739ce1929c13bf6813_grande.jpg" />
+    <Content Include="assets\images\product\5\1024_3231afda2bba4a6d94c13b9770364872_grande.jpg" />
+    <Content Include="assets\images\product\5\1024__1__ba2f5b12bd97404e9d1da8920157d961_compact.jpg" />
+    <Content Include="assets\images\product\5\1024__2__0129b0cb5f5147ef94924a3dcc1687c8_compact.jpg" />
+    <Content Include="assets\images\product\6\2000__30__20bf60b294e044fb9b11df322340da71_grande.jpg" />
+    <Content Include="assets\images\product\6\2000__31__d2fa64892ec04691bc571cb9ae8c8221_compact.jpg" />
+    <Content Include="assets\images\product\6\2000__32__186f05314e744fc186b855896bf4c429_grande.jpg" />
+    <Content Include="assets\images\product\7\prime-rtx4070s-12g-01_21759d36d2a842ed888b42703e81fc1d_grande.jpg" />
+    <Content Include="assets\images\product\7\prime-rtx4070s-12g-02_2f9043646838430b88e38e253831358f_grande.jpg" />
+    <Content Include="assets\images\product\7\prime-rtx4070s-12g-03_1085095fd19d443dac62ef011790c1f1_grande.jpg" />
+    <Content Include="assets\images\product\8\snv3s_2000gb-lg_e277b24cbd7b4eccbe70dc2fba69e8d5_compact.jpg" />
+    <Content Include="assets\images\product\8\snv3s_2000gb_angle-lg_b16cdc0070fb435895a3f0e65ed39a44_compact.jpg" />
+    <Content Include="assets\images\product\8\snv3s_2000gb_pkg-lg_a603785fc04542c5be21481462584107_grande.jpg" />
+    <Content Include="assets\images\product\9\vn-990pro-nvme-m2-ssd-mz-v9p4t0b.jpg" />
+    <Content Include="assets\images\product\9\vn-990pro-nvme-m2-ssd-mz-v9p4t0b_462c6dc3a7f843f4a8a8994fb0cda0dd_compact.jpg" />
+    <Content Include="assets\images\product\9\vn-990pro-nvme-m2-ssd-mz-v9p4t0b__2__47fc41796ffa4c20848ccaccfc7d01c7_compact.jpg" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\plugins\jquery-ui.min.js" />
+    <Content Include="assets\js\plugins\jquery.barrating.min.js" />
+    <Content Include="assets\js\plugins\jquery.counterup.js" />
+    <Content Include="assets\js\plugins\jquery.nice-select.js" />
+    <Content Include="assets\js\plugins\jquery.sticky-sidebar.js" />
+    <Content Include="assets\js\plugins\jquery.ui.touch-punch.min.js" />
+    <Content Include="assets\js\plugins\jquery.zoom.min.js" />
+    <Content Include="assets\js\plugins\lightgallery.min.js" />
+    <Content Include="assets\js\plugins\scroll-top.js" />
+    <Content Include="assets\js\plugins\slick.min.js" />
+    <Content Include="assets\js\plugins\theia-sticky-sidebar.min.js" />
+    <Content Include="assets\js\plugins\waypoints.min.js" />
+    <Content Include="assets\js\vendor\bootstrap.min.js" />
+    <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="assets\js\vendor\popper.min.js" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\BouncyCastle.Cryptography.dll" />
+    <Content Include="bin\BouncyCastle.Cryptography.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\EPPlus.dll" />
+    <Content Include="bin\EPPlus.Interfaces.dll" />
+    <Content Include="bin\EPPlus.System.Drawing.dll" />
+    <Content Include="bin\EPPlus.xml" />
+    <Content Include="bin\itext.barcodes.dll" />
+    <Content Include="bin\itext.barcodes.xml" />
+    <Content Include="bin\itext.bouncy-castle-adapter.dll" />
+    <Content Include="bin\itext.bouncy-castle-adapter.xml" />
+    <Content Include="bin\itext.bouncy-castle-connector.dll" />
+    <Content Include="bin\itext.bouncy-castle-connector.xml" />
+    <Content Include="bin\itext.commons.dll" />
+    <Content Include="bin\itext.commons.xml" />
+    <Content Include="bin\itext.forms.dll" />
+    <Content Include="bin\itext.forms.xml" />
+    <Content Include="bin\itext.io.dll" />
+    <Content Include="bin\itext.io.xml" />
+    <Content Include="bin\itext.kernel.dll" />
+    <Content Include="bin\itext.kernel.xml" />
+    <Content Include="bin\itext.layout.dll" />
+    <Content Include="bin\itext.layout.xml" />
+    <Content Include="bin\itext.pdfa.dll" />
+    <Content Include="bin\itext.pdfa.xml" />
+    <Content Include="bin\itext.pdfua.dll" />
+    <Content Include="bin\itext.pdfua.xml" />
+    <Content Include="bin\itext.sign.dll" />
+    <Content Include="bin\itext.sign.xml" />
+    <Content Include="bin\itext.styledxmlparser.dll" />
+    <Content Include="bin\itext.styledxmlparser.xml" />
+    <Content Include="bin\itext.svg.dll" />
+    <Content Include="bin\itext.svg.xml" />
+    <Content Include="bin\iTextAsian.dll" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="bin\itextsharp.xml" />
+    <Content Include="bin\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="bin\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml" />
+    <Content Include="bin\Microsoft.Extensions.DependencyInjection.dll" />
+    <Content Include="bin\Microsoft.Extensions.DependencyInjection.xml" />
+    <Content Include="bin\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="bin\Microsoft.Extensions.Logging.Abstractions.xml" />
+    <Content Include="bin\Microsoft.Extensions.Logging.dll" />
+    <Content Include="bin\Microsoft.Extensions.Logging.xml" />
+    <Content Include="bin\Microsoft.Extensions.Options.dll" />
+    <Content Include="bin\Microsoft.Extensions.Options.xml" />
+    <Content Include="bin\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="bin\Microsoft.Extensions.Primitives.xml" />
+    <Content Include="bin\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Microsoft.IO.RecyclableMemoryStream.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Buffers.dll" />
+    <Content Include="bin\System.Buffers.xml" />
+    <Content Include="bin\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.xml" />
+    <Content Include="bin\System.Memory.dll" />
+    <Content Include="bin\System.Memory.xml" />
+    <Content Include="bin\System.Numerics.Vectors.dll" />
+    <Content Include="bin\System.Numerics.Vectors.xml" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\System.ValueTuple.dll" />
+    <Content Include="bin\System.ValueTuple.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\TMDTLaptop.dll" />
+    <Content Include="bin\TMDTLaptop.pdb" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Image\banner_web_slider_800x400_7b486e59502946e49437262c3f61cef3.jpg" />
+    <Content Include="Image\gearvn-tet-slider.jpg" />
+    <Content Include="Image\head-gear_0f3bdf6468af4090bc79785c23bf1c0b.jpg" />
+    <Content Include="Models\Data.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Data.Context.cs</LastGenOutput>
+      <DependentUpon>Data.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Data.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Data.edmx</DependentUpon>
+      <LastGenOutput>Data.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Data.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Data.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Data.edmx.diagram">
+      <DependentUpon>Data.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\arial.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.eot" />
+    <Content Include="assets\fonts\fa-brands-400.ttf" />
+    <Content Include="assets\fonts\fa-brands-400.woff" />
+    <Content Include="assets\fonts\fa-brands-400.woff2" />
+    <Content Include="assets\fonts\fa-brands-400d41d.eot" />
+    <Content Include="assets\fonts\fa-regular-400.eot" />
+    <Content Include="assets\fonts\fa-regular-400.ttf" />
+    <Content Include="assets\fonts\fa-regular-400.woff" />
+    <Content Include="assets\fonts\fa-regular-400.woff2" />
+    <Content Include="assets\fonts\fa-regular-400d41d.eot" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\fa-solid-900d41d.eot" />
+    <Content Include="assets\fonts\ionicons28b5.eot" />
+    <Content Include="assets\fonts\ionicons28b5.ttf" />
+    <Content Include="assets\fonts\ionicons28b5.woff" />
+    <Content Include="assets\fonts\lgd41d.eot" />
+    <Content Include="assets\fonts\lgd641.eot" />
+    <Content Include="assets\fonts\lgd641.ttf" />
+    <Content Include="assets\fonts\lgd641.woff" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\TMDTLaptop.dll.config" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Shared\_PartialHeader.cshtml" />
+    <Content Include="Views\Shared\_PartialFooter.cshtml" />
+    <Content Include="Views\Shared\_DanhMucPartial.cshtml" />
+    <Content Include="Views\Shared\_VoucherPopup.cshtml" />
+    <Content Include="Views\Home\DangKy.cshtml" />
+    <Content Include="Views\Home\DangNhap.cshtml" />
+    <Content Include="Views\Home\CuaHang.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\ChiTietSanPham.cshtml" />
+    <Content Include="Views\Home\HoSo.cshtml" />
+    <Content Include="Views\Home\GioHang.cshtml" />
+    <Content Include="Views\Home\Chat.cshtml" />
+    <Content Include="Views\Home\DatHangThanhCong.cshtml" />
+    <Content Include="Views\Login\DangNhap.cshtml" />
+    <Content Include="Views\ChamSocKH\Index.cshtml" />
+    <Content Include="Views\ChamSocKH\Loi404.cshtml" />
+    <Content Include="Views\Home\ChiTietDonHang.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Home\QuenMatKhau.cshtml" />
+    <Content Include="Views\Admin\QuanLyDanhMuc.cshtml" />
+    <Content Include="Views\Admin\ThemDanhMuc.cshtml" />
+    <Content Include="Views\Admin\SuaDanhMuc.cshtml" />
+    <Content Include="Views\Admin\QuanLyHang.cshtml" />
+    <Content Include="Views\Admin\ThemHang.cshtml" />
+    <Content Include="Views\Admin\SuaHang.cshtml" />
+    <Content Include="Views\Admin\QuanLyKhachHang.cshtml" />
+    <Content Include="Views\Admin\QuanLyBanner.cshtml" />
+    <Content Include="Views\Admin\ThemBanner.cshtml" />
+    <Content Include="Views\Admin\SuaBanner.cshtml" />
+    <Content Include="Views\Admin\QuanLySanPham.cshtml" />
+    <Content Include="Views\Admin\ThemSanPham.cshtml" />
+    <Content Include="Views\Admin\SuaSanPham.cshtml" />
+    <Content Include="Views\Admin\QuanLyVoucher.cshtml" />
+    <Content Include="Views\Admin\ThemVoucher.cshtml" />
+    <Content Include="Views\Admin\SuaVoucher.cshtml" />
+    <Content Include="Views\Admin\QuanLyTonKho.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\QuanLyDonHang.cshtml" />
+    <Content Include="Views\Admin\ChiTietDonHang.cshtml" />
+    <Content Include="Views\Admin\QuanLyNhanVien.cshtml" />
+    <Content Include="Views\Admin\ThemNhanVien.cshtml" />
+    <Content Include="Views\Admin\QuanLyPhieuNhapKho.cshtml" />
+    <Content Include="Views\Admin\ChiTietPhieuNhapKho.cshtml" />
+    <Content Include="Views\Admin\ThemPhieuNhapKho.cshtml" />
+    <Content Include="Views\NV\Index.cshtml" />
+    <Content Include="Views\Admin\ThongTinCaNhan.cshtml" />
+    <Content Include="Views\Admin\DoiMatKhau.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59774</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44373/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
