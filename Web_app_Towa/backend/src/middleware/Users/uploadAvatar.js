@@ -4,8 +4,8 @@ const fs = require("fs");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadPath = path.join(__dirname, '../../uploads/avatars');
-    
+    const uploadPath = path.join(__dirname, "../../uploads/avatars");
+
     // Kiểm tra và tạo thư mục nếu chưa tồn tại
     if (!fs.existsSync(uploadPath)) {
       fs.mkdirSync(uploadPath, { recursive: true });
@@ -14,13 +14,13 @@ const storage = multer.diskStorage({
     cb(null, uploadPath); // Chỉ định nơi lưu trữ
   },
   filename: (req, file, cb) => {
-    const userId = req.body.id_users ? req.body.id_users.trim() : 'default';
-    console.log("Received id_users:", userId);  // Kiểm tra giá trị của id_users
+    const userId = req.body.id_users ? req.body.id_users.trim() : "default";
+    console.log("Received id_users:", userId); // Kiểm tra giá trị của id_users
     const fileExtension = path.extname(file.originalname); // Lấy phần mở rộng của file
     const filename = `${userId}${fileExtension}`; // Đổi tên file theo id_users
     console.log("Saving file as:", filename); // Kiểm tra tên file lưu
     cb(null, filename); // Gửi tên file mới
-  }
+  },
 });
 
 // Kiểm tra loại file (chỉ cho phép ảnh)

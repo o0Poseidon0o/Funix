@@ -15,6 +15,7 @@ app.use(express.json());
 // sử dụng route của phòng ban
 app.use('/api/departments',departmentRouters);
 app.use('/api/roles',rolesRoles);
+// sử dụng route của Users
 app.use('/api/users',users)
 
 

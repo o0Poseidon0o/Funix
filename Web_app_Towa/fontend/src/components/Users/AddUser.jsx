@@ -5,24 +5,31 @@ const AddUser = () => {
   const [avatarUrl, setAvatarUrl] = useState(
     "https://ilarge.lisimg.com/image/21867558/1118full-hyakujuu-sentai-gaoranger-photo.jpg"
   ); // Ảnh mặc định
-
   const [departments, setDepartments] = useState([]); // Danh sách bộ phận
   const [roles, setRoles] = useState([]); // Danh sách vai trò
   const [userData, setUserData] = useState({
-    id_users: "", // ID người dùng
+    id_users: "",
     id_departments: "",
     id_roles: "",
     username: "",
     email_user: "",
     password_user: "",
-    avatar: "", // Avatar sẽ lấy URL nếu có
+    avatar: "",
   });
   const [message, setMessage] = useState(""); // Thông báo phản hồi từ server
+  const [isLoading, setIsLoading] = useState(false); // Loading indicator
 
   // Kiểm tra khi thay đổi file avatar
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (!file) return;
+    
+    const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+    if (!allowedTypes.includes(file.type)) {
+      setMessage("Chỉ cho phép tải lên ảnh định dạng JPEG, PNG, hoặc JPG.");
+      return;
+    }
+
     setSelectedFile(file);
 
     // Hiển thị ảnh tạm thời trước khi upload
@@ -33,6 +40,7 @@ const AddUser = () => {
   // Hàm xử lý khi người dùng submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true); // Bắt đầu loading
 
     // Kiểm tra nếu có trường nào còn trống
     if (
@@ -44,18 +52,18 @@ const AddUser = () => {
       !userData.id_users
     ) {
       setMessage("Vui lòng điền đầy đủ thông tin!");
+      setIsLoading(false); // Kết thúc loading
       return;
     }
 
     // Tạo FormData để gửi dữ liệu
     const formData = new FormData();
     if (selectedFile) {
-      // Đổi tên file theo id_users
       const fileExtension = selectedFile.name.split('.').pop();
       const newFileName = `${userData.id_users}.${fileExtension}`;
       formData.append("avatar", selectedFile, newFileName);
     }
-    formData.append("id_users", userData.id_users); // ID người dùng
+    formData.append("id_users", userData.id_users);
     formData.append("username", userData.username);
     formData.append("email_user", userData.email_user);
     formData.append("password_user", userData.password_user);
@@ -91,28 +99,25 @@ const AddUser = () => {
     } catch (error) {
       console.error("Error adding user:", error);
       setMessage("Đã xảy ra lỗi trong quá trình thêm người dùng.");
+    } finally {
+      setIsLoading(false); // Kết thúc loading
     }
   };
 
   // Hàm fetch dữ liệu phòng ban và vai trò
   const fetchDepartmentsAndRoles = async () => {
     try {
-      const [departmentsResponse, rolesResponse] = await Promise.all([
+      const responses = await Promise.all([
         fetch("http://localhost:5000/api/departments/all-departments"),
         fetch("http://localhost:5000/api/roles/all-roles"),
       ]);
-
-      if (!departmentsResponse.ok || !rolesResponse.ok) {
-        throw new Error("Lỗi tải dữ liệu từ server");
-      }
-
-      const departmentsData = await departmentsResponse.json();
-      const rolesData = await rolesResponse.json();
-
-      setDepartments(Array.isArray(departmentsData) ? departmentsData : []);
-      setRoles(Array.isArray(rolesData) ? rolesData : []);
+      const [departmentsData, rolesData] = await Promise.all(
+        responses.map((res) => res.json())
+      );
+      setDepartments(departmentsData || []);
+      setRoles(rolesData || []);
     } catch (error) {
-      console.error("Error fetching departments and roles:", error);
+      console.error("Error fetching data:", error);
       setDepartments([]);
       setRoles([]);
     }
@@ -155,8 +160,9 @@ const AddUser = () => {
               <button
                 className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
                 type="submit"
+                disabled={isLoading}
               >
-                Thêm Người Dùng
+                {isLoading ? "Đang thêm..." : "Thêm Người Dùng"}
               </button>
             </div>
             {message && <p className="mt-4 text-red-500">{message}</p>}
@@ -292,8 +298,9 @@ const AddUser = () => {
               <button
                 className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
                 type="submit"
+                disabled={isLoading}
               >
-                Thêm Người Dùng
+                {isLoading ? "Đang thêm..." : "Thêm Người Dùng"}
               </button>
             </div>
             {message && <p className="mt-4 text-red-500">{message}</p>}

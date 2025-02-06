@@ -7,7 +7,8 @@ const { Op } = require("sequelize");
 // Thêm người dùng
 const addUser = async (req, res) => {
   const { id_users, username, email_user, password_user, id_departments, id_roles } = req.body;
-  const avatar = req.file ? `/uploads/avatars/${req.file.filename}` : null; // Lấy đường dẫn của avatar
+   // Kiểm tra nếu có file ảnh, nếu có lưu đường dẫn vào CSDL
+   const avatar = req.file ? `../../uploads/avatars/${req.file.filename}` : '../../uploads/avatars/default.jpg';
 
   try {
     // Kiểm tra các giá trị đầu vào
