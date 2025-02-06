@@ -1,29 +1,35 @@
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
-// Thiết lập nơi lưu trữ file
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    const uploadPath = path.join(__dirname, '../../uploads/avtars');
-    fs.mkdirSync(uploadPath, { recursive: true }); // Tạo thư mục nếu chưa tồn tại
-    cb(null, uploadPath);
+    const uploadPath = path.join(__dirname, '../../uploads/avatars');
+    
+    // Kiểm tra và tạo thư mục nếu chưa tồn tại
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath, { recursive: true });
+    }
+
+    cb(null, uploadPath); // Chỉ định nơi lưu trữ
   },
   filename: (req, file, cb) => {
-    // Sử dụng id_users làm tên file, nếu có trong body request
+    const userId = req.body.id_users ? req.body.id_users.trim() : 'default';
+    console.log("Received id_users:", userId);  // Kiểm tra giá trị của id_users
     const fileExtension = path.extname(file.originalname); // Lấy phần mở rộng của file
-    const filename = `${req.body.id_users}${fileExtension}`; // Đổi tên file theo id_users
+    const filename = `${userId}${fileExtension}`; // Đổi tên file theo id_users
+    console.log("Saving file as:", filename); // Kiểm tra tên file lưu
     cb(null, filename); // Gửi tên file mới
-  },
+  }
 });
 
 // Kiểm tra loại file (chỉ cho phép ảnh)
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+  const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
   if (allowedTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error('Only image files are allowed'), false);
+    cb(new Error("Only image files are allowed"), false);
   }
 };
 

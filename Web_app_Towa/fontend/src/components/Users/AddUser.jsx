@@ -9,17 +9,20 @@ const AddUser = () => {
   const [departments, setDepartments] = useState([]); // Danh sách bộ phận
   const [roles, setRoles] = useState([]); // Danh sách vai trò
   const [userData, setUserData] = useState({
-    id_departments: '',
-    id_role: '',
-    username: '',
-    email_user: '',
-    password_user: '',
+    id_users: "", // ID người dùng
+    id_departments: "",
+    id_roles: "",
+    username: "",
+    email_user: "",
+    password_user: "",
+    avatar: "", // Avatar sẽ lấy URL nếu có
   });
   const [message, setMessage] = useState(""); // Thông báo phản hồi từ server
 
-  // Hàm xử lý khi người dùng chọn file
+  // Kiểm tra khi thay đổi file avatar
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+    if (!file) return;
     setSelectedFile(file);
 
     // Hiển thị ảnh tạm thời trước khi upload
@@ -27,22 +30,37 @@ const AddUser = () => {
     setAvatarUrl(imageUrl);
   };
 
-  // Hàm upload và submit dữ liệu người dùng
+  // Hàm xử lý khi người dùng submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Tạo FormData để upload ảnh
-    const formData = new FormData();
-    if (selectedFile) {
-      formData.append("avatar", selectedFile);
+    // Kiểm tra nếu có trường nào còn trống
+    if (
+      !userData.username ||
+      !userData.email_user ||
+      !userData.password_user ||
+      !userData.id_departments ||
+      !userData.id_roles ||
+      !userData.id_users
+    ) {
+      setMessage("Vui lòng điền đầy đủ thông tin!");
+      return;
     }
 
-    // Thêm các dữ liệu người dùng vào FormData
+    // Tạo FormData để gửi dữ liệu
+    const formData = new FormData();
+    if (selectedFile) {
+      // Đổi tên file theo id_users
+      const fileExtension = selectedFile.name.split('.').pop();
+      const newFileName = `${userData.id_users}.${fileExtension}`;
+      formData.append("avatar", selectedFile, newFileName);
+    }
+    formData.append("id_users", userData.id_users); // ID người dùng
     formData.append("username", userData.username);
     formData.append("email_user", userData.email_user);
     formData.append("password_user", userData.password_user);
     formData.append("id_departments", userData.id_departments);
-    formData.append("id_role", userData.id_role);
+    formData.append("id_roles", userData.id_roles);
 
     try {
       const response = await fetch(`http://localhost:5000/api/users/add`, {
@@ -50,19 +68,23 @@ const AddUser = () => {
         body: formData,
       });
       const data = await response.json();
+
       if (response.ok) {
         setMessage("Người dùng đã được thêm thành công!");
-        // Reset form sau khi thêm người dùng thành công
+        // Reset form
         setUserData({
-          id_users:'',
-          id_departments: '',
-          id_role: '',
-          username: '',
-          email_user: '',
-          password_user: '',
+          id_users: "",
+          id_departments: "",
+          id_roles: "",
+          username: "",
+          email_user: "",
+          password_user: "",
+          avatar: "",
         });
         setSelectedFile(null);
-        setAvatarUrl("https://ilarge.lisimg.com/image/21867558/1118full-hyakujuu-sentai-gaoranger-photo.jpg");
+        setAvatarUrl(
+          "https://ilarge.lisimg.com/image/21867558/1118full-hyakujuu-sentai-gaoranger-photo.jpg"
+        );
       } else {
         setMessage(`Lỗi: ${data.message}`);
       }
@@ -72,45 +94,34 @@ const AddUser = () => {
     }
   };
 
+  // Hàm fetch dữ liệu phòng ban và vai trò
   const fetchDepartmentsAndRoles = async () => {
     try {
       const [departmentsResponse, rolesResponse] = await Promise.all([
-        fetch('http://localhost:5000/api/departments/all-departments'),
-        fetch('http://localhost:5000/api/roles/all-roles'),
+        fetch("http://localhost:5000/api/departments/all-departments"),
+        fetch("http://localhost:5000/api/roles/all-roles"),
       ]);
-  
+
+      if (!departmentsResponse.ok || !rolesResponse.ok) {
+        throw new Error("Lỗi tải dữ liệu từ server");
+      }
+
       const departmentsData = await departmentsResponse.json();
       const rolesData = await rolesResponse.json();
-  
-      // Kiểm tra dữ liệu của các bộ phận
-      console.log("Departments Data:", departmentsData);
-      if (Array.isArray(departmentsData)) {
-        setDepartments(departmentsData);
-      } else {
-        console.error("Departments API did not return an array:", departmentsData);
-        setDepartments([]);
-      }
-  
-      // Kiểm tra dữ liệu của các vai trò
-      console.log("Roles Data:", rolesData);
-      if (Array.isArray(rolesData)) {
-        setRoles(rolesData);
-      } else {
-        console.error("Roles API did not return an array:", rolesData);
-        setRoles([]);
-      }
+
+      setDepartments(Array.isArray(departmentsData) ? departmentsData : []);
+      setRoles(Array.isArray(rolesData) ? rolesData : []);
     } catch (error) {
       console.error("Error fetching departments and roles:", error);
+      setDepartments([]);
+      setRoles([]);
     }
   };
-  
 
-  // Gọi API khi component được mount
   useEffect(() => {
     fetchDepartmentsAndRoles();
   }, []);
 
-  // Hàm xử lý thay đổi dữ liệu người dùng
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
@@ -125,10 +136,10 @@ const AddUser = () => {
         <div className="leading-loose">
           <form
             className="p-10 bg-white rounded shadow-xl"
-            onSubmit={handleSubmit} // Sử dụng handleSubmit thay vì handleUpload
+            onSubmit={handleSubmit}
           >
             <img
-              src={avatarUrl} // Hiển thị ảnh được chọn
+              src={avatarUrl}
               alt="avatar"
               className="mb-4 w-40 h-full object-cover rounded-md"
             />
@@ -136,7 +147,7 @@ const AddUser = () => {
               <input
                 type="file"
                 accept="image/*"
-                onChange={handleFileChange} // Khi người dùng chọn ảnh
+                onChange={handleFileChange}
                 className="mb-4"
               />
             </div>
@@ -148,7 +159,7 @@ const AddUser = () => {
                 Thêm Người Dùng
               </button>
             </div>
-            {message && <p className="mt-4 text-red-500">{message}</p>} {/* Thông báo phản hồi */}
+            {message && <p className="mt-4 text-red-500">{message}</p>}
           </form>
         </div>
       </div>
@@ -159,9 +170,12 @@ const AddUser = () => {
         </p>
         <div className="leading-loose">
           <form className="p-10 bg-white rounded shadow-xl" onSubmit={handleSubmit}>
-          <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="id_users">
-                Số hiệu
+            <div className="mt-2">
+              <label
+                className="block text-sm text-gray-600"
+                htmlFor="id_users"
+              >
+                ID Người dùng
               </label>
               <input
                 className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
@@ -169,14 +183,16 @@ const AddUser = () => {
                 name="id_users"
                 type="text"
                 required
-                placeholder="Số hiệu"
+                placeholder="ID Người dùng"
                 value={userData.id_users}
                 onChange={handleChange}
-                aria-label="id_users"
               />
             </div>
             <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="username">
+              <label
+                className="block text-sm text-gray-600"
+                htmlFor="username"
+              >
                 Tên người dùng
               </label>
               <input
@@ -188,11 +204,13 @@ const AddUser = () => {
                 placeholder="Tên người dùng"
                 value={userData.username}
                 onChange={handleChange}
-                aria-label="Username"
               />
             </div>
             <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="email_user">
+              <label
+                className="block text-sm text-gray-600"
+                htmlFor="email_user"
+              >
                 Email
               </label>
               <input
@@ -204,11 +222,13 @@ const AddUser = () => {
                 placeholder="Email"
                 value={userData.email_user}
                 onChange={handleChange}
-                aria-label="Email"
               />
             </div>
             <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="password_user">
+              <label
+                className="block text-sm text-gray-600"
+                htmlFor="password_user"
+              >
                 Mật khẩu
               </label>
               <input
@@ -220,11 +240,13 @@ const AddUser = () => {
                 placeholder="Mật khẩu"
                 value={userData.password_user}
                 onChange={handleChange}
-                aria-label="Password"
               />
             </div>
             <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="id_departments">
+              <label
+                className="block text-sm text-gray-600"
+                htmlFor="id_departments"
+              >
                 Bộ phận
               </label>
               <select
@@ -234,45 +256,47 @@ const AddUser = () => {
                 required
                 value={userData.id_departments}
                 onChange={handleChange}
-                aria-label="Department"
               >
                 <option value="">Chọn bộ phận</option>
-                {departments.length > 0 ? (
-                  departments.map(department => (
-                    <option key={department.id_departments} value={department.id_departments}>
-                      {department.department_name}
-                    </option>
-                  ))
-                ) : (
-                  <option disabled>Không có bộ phận nào</option>
-                )}
+                {departments.map((department) => (
+                  <option
+                    key={department.id_departments}
+                    value={department.id_departments}
+                  >
+                    {department.department_name}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="mt-2">
-              <label className="block text-sm text-gray-600" htmlFor="id_role">
+              <label className="block text-sm text-gray-600" htmlFor="id_roles">
                 Vai trò
               </label>
               <select
                 className="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                id="id_role"
-                name="id_role"
+                id="id_roles"
+                name="id_roles"
                 required
-                value={userData.id_role}
+                value={userData.id_roles}
                 onChange={handleChange}
-                aria-label="Role"
               >
                 <option value="">Chọn vai trò</option>
-                {roles.length > 0 ? (
-                  roles.map(role => (
-                    <option key={role.id_roles} value={role.id_roles}>
-                      {role.name_role}
-                    </option>
-                  ))
-                ) : (
-                  <option disabled>Không có vai trò nào</option>
-                )}
+                {roles.map((role) => (
+                  <option key={role.id_roles} value={role.id_roles}>
+                    {role.name_role}
+                  </option>
+                ))}
               </select>
             </div>
+            <div className="mt-4">
+              <button
+                className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                type="submit"
+              >
+                Thêm Người Dùng
+              </button>
+            </div>
+            {message && <p className="mt-4 text-red-500">{message}</p>}
           </form>
         </div>
       </div>
