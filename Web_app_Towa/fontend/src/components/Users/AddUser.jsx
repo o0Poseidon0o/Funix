@@ -130,8 +130,9 @@ const AddUser = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
+    console.log({ ...userData, [name]: value })
   };
-
+  
   return (
     <div className="flex flex-wrap mt-10">
       <div className="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">

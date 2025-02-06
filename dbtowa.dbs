@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="Project_4afd309" database="PostgreSQL" >
+	<schema name="public" >
+		<table name="tb_departments" >
+			<comment><![CDATA[CREATE TABLE departments (
+  id SERIAL PRIMARY KEY,
+  department_name VARCHAR(50) UNIQUE NOT NULL
+);]]></comment>
+			<column name="id_departments" type="integer" jt="4" mandatory="y" />
+			<column name="department_name" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="department_content" type="varchar" length="255" jt="12" />
+			<index name="pk_tb_departments_id_departments" unique="PRIMARY_KEY" >
+				<column name="id_departments" />
+			</index>
+		</table>
+		<table name="tb_products" >
+			<column name="id_product" type="integer" jt="4" mandatory="y" />
+			<column name="id_users" type="integer" jt="4" />
+			<column name="name_product" type="varchar" length="255" jt="12" />
+			<column name="soluong_product" type="integer" jt="4" />
+			<index name="pk_tb_product_id_product" unique="PRIMARY_KEY" >
+				<column name="id_product" />
+			</index>
+			<fk name="fk_tb_products_tb_users" to_schema="public" to_table="tb_users" >
+				<fk_column name="id_users" pk="id_users" />
+			</fk>
+		</table>
+		<table name="tb_roles" >
+			<comment><![CDATA[CREATE TABLE tb_roles (
+  id interger PRIMARY KEY,
+  role_name VARCHAR(50) NOT NULL
+);
+bảng này sẽ có thêm chức danh của người dùng]]></comment>
+			<column name="id_roles" type="integer" jt="4" mandatory="y" />
+			<column name="name_role" type="varchar" length="250" decimal="0" jt="12" mandatory="y" />
+			<index name="pk_tb_roles_id_roles" unique="PRIMARY_KEY" >
+				<column name="id_roles" />
+			</index>
+		</table>
+		<table name="tb_stages" >
+			<column name="id_stage" type="integer" jt="4" mandatory="y" />
+			<column name="id_product" type="integer" jt="4" />
+			<column name="name_stage" type="varchar" length="255" jt="12" />
+			<column name="time_stage" type="integer" jt="4" />
+			<index name="pk_tb_stage_id_stage" unique="PRIMARY_KEY" >
+				<column name="id_stage" />
+			</index>
+			<fk name="fk_tb_stages_tb_products" to_schema="public" to_table="tb_products" >
+				<fk_column name="id_product" pk="id_product" />
+			</fk>
+		</table>
+		<table name="tb_users" >
+			<comment><![CDATA[CREATE TABLE tb_users (
+  id INTERGER PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  email_user VARCHAR(250) NOT NULL,
+  password_user VARCHAR(255),
+  id_departments INTEGER REFERENCES departments(id),
+  id_roles INTEGER REFERENCES roles(id)
+);]]></comment>
+			<column name="id_users" type="integer" jt="4" mandatory="y" />
+			<column name="avatar" type="varchar" length="255" jt="12" />
+			<column name="username" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="email_user" type="varchar" length="255" jt="12" mandatory="y" />
+			<column name="password_user" type="varchar" length="255" jt="12" />
+			<column name="id_departments" type="integer" jt="4" />
+			<column name="id_roles" type="integer" jt="4" />
+			<index name="pk_tb_users_id_users" unique="PRIMARY_KEY" >
+				<column name="id_users" />
+			</index>
+			<fk name="fk_tb_users_tb_departments" to_schema="public" to_table="tb_departments" >
+				<fk_column name="id_departments" pk="id_departments" />
+			</fk>
+			<fk name="fk_tb_users_tb_roles" to_schema="public" to_table="tb_roles" >
+				<fk_column name="id_roles" pk="id_roles" />
+			</fk>
+		</table>
+		<table name="users_logs" >
+			<comment><![CDATA[CREATE TABLE user_logs (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES tb_users(id),
+  action VARCHAR(250),
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);]]></comment>
+			<column name="id_user_log" type="integer" jt="4" mandatory="y" />
+			<column name="id_users" type="integer" jt="4" />
+			<column name="action_users" type="varchar" length="250" jt="12" />
+			<column name="timestamp_users_logs" type="timestamp" jt="93" >
+				<defo>CURRENT_TIMESTAMP</defo>
+			</column>
+			<index name="pk_users_logs_id_user_log" unique="PRIMARY_KEY" >
+				<column name="id_user_log" />
+			</index>
+			<fk name="fk_users_logs_tb_users" to_schema="public" to_table="tb_users" >
+				<fk_column name="id_users" pk="id_users" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.2.8.jar" driver_desc="Standard" host="10.10.10.51" port="5432" instance="datatowa" user="postgres" passwd="UEBzc3cwcmQ=" />
+	<layout name="Default Layout" id="Layout_2839613" joined_routing="y" show_column_type="y" show_page_borders="y" show_relation="cascade" >
+		<entity schema="public" name="users_logs" color="C1D8EE" x="368" y="336" />
+		<entity schema="public" name="tb_departments" color="C1D8EE" x="384" y="224" />
+		<entity schema="public" name="tb_stages" color="C1D8EE" x="656" y="528" />
+		<entity schema="public" name="tb_products" color="C1D8EE" x="368" y="480" />
+		<entity schema="public" name="tb_roles" color="C1D8EE" x="144" y="160" />
+		<entity schema="public" name="tb_users" color="FF0000" x="48" y="288" />
+		<callout x="48" y="80" pointer="SV" >
+			<comment><![CDATA[Mô tả:
+- Quản lý người dùng và phân quyền theo vùng. Biết đưuọc User đó đang ở bộ phận nào
+- Có thể lưu lại log những hành động của user trên hệ thống]]></comment>
+		</callout>
+		<group name="Group_Quan_ly User " color="C4E0F9" >
+			<comment><![CDATA[Mô tả:
+- Quản lý người dùng và phân quyền theo vùng. Biết đưuọc User đó đang ở bộ phận nào
+- Có thể lưu lại log những hành động của user trên hệ thống]]></comment>
+			<entity schema="public" name="tb_departments" />
+			<entity schema="public" name="tb_roles" />
+			<entity schema="public" name="tb_users" />
+			<entity schema="public" name="users_logs" />
+		</group>
+		<script name="SQL_Editor" id="Editor_384c319" language="SQL" >
+			<string><![CDATA[SELECT u.id, u.username, u.password_user, r.name_role
+FROM users u
+JOIN tb_role1 r ON u.id_role = r.id_role;]]></string>
+		</script>
+		<script name="SQL_Editor_001" id="Editor_c76faa" language="SQL" >
+			<string><![CDATA[CREATE TABLE bookings (
+    id INTEGER PRIMARY KEY,
+    booking_date DATE,
+    start_time TIME,
+    end_time TIME,
+    status VARCHAR(50) CHECK (status IN ('pending', 'confirmed', 'canceled'))
+);]]></string>
+		</script>
+		<script name="bookings" id="Editor_181a761" language="SQL" >
+			<string><![CDATA[SELECT id, booking_date, start_time, end_time, status
+FROM
+	"public".bookings s;]]></string>
+		</script>
+		<script name="id_departments" id="Editor_24a83d1" language="SQL" >
+			<string><![CDATA[SELECT id_departments
+FROM
+	"public".tb_departments s;]]></string>
+		</script>
+		<script name="role_permissions" id="Editor_299e99f" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".role_permissions
+	( id_role_permissons, id_roles, id_departments, name_role_permissions) VALUES (1102, 1, 102, 'manager sửa'  );]]></string>
+		</script>
+		<script name="role_permissions_001" id="Editor_1f54ca8" language="SQL" >
+			<string><![CDATA[SELECT id_role_permissons, id_roles, id_departments, name_role_permissions
+FROM
+	"public".role_permissions s;]]></string>
+		</script>
+		<script name="tb_booking_cars" id="Editor_49f56b8" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_booking_cars
+	( id_booking_car, id_users, id_car, start_datetime, end_datetime, status_booking) VALUES ( 01,5738, 102,'2024-09-25 08:00:00' ,'2024-09-27 17:00:00','confirmed');]]></string>
+		</script>
+		<script name="tb_booking_cars_001" id="Editor_1e9ebc8" language="SQL" >
+			<string><![CDATA[SELECT id_booking_car, id_users, id_car, start_datetime, end_datetime, status_booking
+FROM
+	"public".tb_booking_cars s;]]></string>
+		</script>
+		<script name="tb_booking_cars_002" id="Editor_1540610" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".tb_booking_cars;]]></string>
+		</script>
+		<script name="tb_cars" id="Editor_2076e18" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_cars
+	( id_car, car_name, license_plate, status_car) VALUES ( 102,'ford','50-5689-20', 'check' );]]></string>
+		</script>
+		<script name="tb_departments" id="Editor_38a6caa" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_departments
+	( id_departments, department_name) VALUES ( 4200, 'KTSX');]]></string>
+		</script>
+		<script name="tb_departments_001" id="Editor_47fd541" language="SQL" >
+			<string><![CDATA[SELECT id_departments, department_name
+FROM
+	"public".tb_departments s;]]></string>
+		</script>
+		<script name="tb_departments_002" id="Editor_3e6d5bc" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".tb_departments;]]></string>
+		</script>
+		<script name="tb_departments_003" id="Editor_5a4d5ae" language="SQL" >
+			<string><![CDATA[SELECT id_departments, department_name, department_content
+FROM
+	"public".tb_departments s;]]></string>
+		</script>
+		<script name="tb_permissions" id="Editor_30ca856" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_permissions
+	( id_permissons, permisson_name) VALUES ( 103, 'manage_users' );]]></string>
+		</script>
+		<script name="tb_permissions_001" id="Editor_9178c7" language="SQL" >
+			<string><![CDATA[SELECT id_permissons, permisson_name
+FROM
+	"public".tb_permissions s;]]></string>
+		</script>
+		<script name="tb_role1" id="Editor_388c2a" language="SQL" >
+			<string><![CDATA[SELECT id_role, name_role
+FROM
+	"public".tb_role1 e;]]></string>
+		</script>
+		<script name="tb_role1_001" id="Editor_1334be" language="SQL" >
+			<string><![CDATA[SELECT id_role, name_role
+FROM
+	"public".tb_role1 e;]]></string>
+		</script>
+		<script name="tb_roles" id="Editor_2a6a546" language="SQL" >
+			<string><![CDATA[SELECT id_roles, role_name
+FROM
+	"public".tb_roles s;]]></string>
+		</script>
+		<script name="tb_roles_001" id="Editor_23c047a" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_roles
+	( id_roles, role_name) VALUES ( 10, 'admin' );]]></string>
+		</script>
+		<script name="tb_roles_002" id="Editor_481a6ac" language="SQL" >
+			<string><![CDATA[SELECT id_roles, name_role
+FROM
+	"public".tb_roles s;]]></string>
+		</script>
+		<script name="tb_roles_003" id="Editor_56bb206" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_roles
+	( id_roles, name_role) VALUES ( 104,'Tài xế' );]]></string>
+		</script>
+		<script name="tb_user" id="Editor_45a6b30" language="SQL" >
+			<string><![CDATA[SELECT id_user, id_role, username, mail_user, password_user, avatar_user
+FROM
+	"public".tb_user r;]]></string>
+		</script>
+		<script name="tb_user_001" id="Editor_191772a" language="SQL" >
+			<string><![CDATA[SELECT id_user, id_role, username, mail_user, password_user, avatar_user
+FROM
+	"public".tb_user r;]]></string>
+		</script>
+		<script name="tb_users" id="Editor_57da69a" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".tb_users
+	( id_users, username, email_user, password_user, id_departments, id_roles) VALUES ( 5739, 'user', 'user@towa.com.vn', '123456', 4200, 10 );]]></string>
+		</script>
+		<script name="tb_users_001" id="Editor_1344ab9" language="SQL" >
+			<string><![CDATA[SELECT id_users, username, email_user, password_user, id_departments, id_roles
+FROM
+	"public".tb_users s;]]></string>
+		</script>
+		<script name="tb_users_002" id="Editor_4daba08" language="SQL" confirmed="y" >
+			<string><![CDATA[INSERT INTO "public".tb_users
+	( id_users, username, email_user, password_user, id_departments, id_roles) VALUES ( ?, ?, ?, ?, ?, ? );]]></string>
+		</script>
+		<script name="tb_users_003" id="Editor_57dae9b" language="SQL" >
+			<string><![CDATA[SELECT id_users, username, email_user, password_user, id_departments, id_roles
+FROM
+	"public".tb_users s;]]></string>
+		</script>
+		<script name="tb_users_004" id="Editor_eb07aa" language="SQL" >
+			<string><![CDATA[SELECT id_users, avatar, username, email_user, password_user, id_departments, id_roles
+FROM
+	"public".tb_users s;]]></string>
+		</script>
+		<script name="tb_users_005" id="Editor_4985fef" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".tb_users;]]></string>
+		</script>
+		<script name="tb_users_006" id="Editor_4fcad9b" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".tb_users;]]></string>
+		</script>
+		<script name="tb_users_007" id="Editor_3b28011" language="SQL" >
+			<string><![CDATA[SELECT id_users, avatar, username, email_user, password_user, id_departments, id_roles
+FROM
+	"public".tb_users s;]]></string>
+		</script>
+		<script name="users" id="Editor_1d9351e" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".users;]]></string>
+		</script>
+		<script name="users_001" id="Editor_2955c9a" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".users
+	( id, username, password_user, id_role) VALUES ( 2, 'user1', '123456', 102);]]></string>
+		</script>
+		<script name="users_002" id="Editor_2112b80" language="SQL" >
+			<string><![CDATA[SELECT id, username, password_user, id_role
+FROM
+	"public".users s;]]></string>
+		</script>
+		<script name="users_003" id="Editor_3f875e0" language="SQL" >
+			<string><![CDATA[DELETE FROM "public".users;]]></string>
+		</script>
+		<script name="users_004" id="Editor_476baac" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".users1
+	( id, username, password_user, id_role) VALUES ( 1,'nhan', '123456', 101 );]]></string>
+		</script>
+		<script name="users_005" id="Editor_146d2ee" language="SQL" >
+			<string><![CDATA[INSERT INTO "public".users
+	( id, username, password_user, id_role) VALUES ( 2, 'user1', '123456', 102 );]]></string>
+		</script>
+	</layout>
+</project>
