@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     cb(null, uploadPath); // Chỉ định nơi lưu trữ
   },
   filename: (req, file, cb) => {
-    const userId = req.body.id_users ? req.body.id_users.trim() : "default";
+    const userId = file?.originalname?.split(".")?.[0] ?? "default";
     console.log("Received id_users:", userId); // Kiểm tra giá trị của id_users
     const fileExtension = path.extname(file.originalname); // Lấy phần mở rộng của file
     const filename = `${userId}${fileExtension}`; // Đổi tên file theo id_users

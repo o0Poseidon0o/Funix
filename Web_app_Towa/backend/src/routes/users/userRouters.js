@@ -7,5 +7,6 @@ const upload = require("../../middleware/Users/uploadAvatar");
 // Route thêm người dùng
 // router.post("/add", uploadavatar.single("avatar"), user.addUser);
 router.post("/add", upload.single("avatar"), user.addUser);
+router.get("/all",user.getAllUser)
 
 module.exports = router;

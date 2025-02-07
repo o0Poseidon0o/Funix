@@ -1,9 +1,11 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const sequelize = require("./src/config/database");
 const departmentRouters=require('./src/routes/department/departmentRoutes');
 const rolesRoles=require('./src/routes/Roles/rolesrouters');
 const users=require('./src/routes/users/userRouters')
+const authlogin =require('./src/routes/authloginRoutes/authloginRoutes')
 
 require('dotenv').config();
 const app = express();
@@ -17,8 +19,9 @@ app.use('/api/departments',departmentRouters);
 app.use('/api/roles',rolesRoles);
 // sử dụng route của Users
 app.use('/api/users',users)
-
-
+//route đến phần đăng nhập phân quyền roles
+app.use('/api/auth',authlogin)
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 sequelize
   .sync()
   .then(() => {

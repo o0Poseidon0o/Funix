@@ -133,10 +133,47 @@ const searchUsers = async (req, res) => {
     res.status(500).json({ message: "Error searching users", error: error.message });
   }
 };
+// Lấy tất cả thông tin người dùng
+const getAllUser = async (req, res) => {
+  try {
+    // Lấy tất cả người dùng cùng thông tin bộ phận và vai trò
+    const users = await User.findAll({
+      include: [
+        { model: Department, attributes: ['department_name'], as: 'Department' }, // Alias cho Department
+        { model: Role, attributes: ['name_role'], as: 'Role' } // Alias cho Role, sửa 'role_name' thành 'name_role'
+      ]
+    });
+
+    if (!users || users.length === 0) {
+      return res.status(404).json({ message: "No users found" });
+    }
+
+    // Trả về thông tin tất cả người dùng
+    res.status(200).json({
+      message: "Users information retrieved successfully",
+      users: users.map(user => ({
+        id_users: user.id_users,
+        username: user.username,
+        email_user: user.email_user,
+        avatar: user.avatar,
+        department_name: user.Department ? user.Department.department_name : "No department",
+        role_name: user.Role ? user.Role.name_role : "No role" // Sử dụng 'name_role' để lấy tên vai trò
+      }))
+    });
+  } catch (error) {
+    console.error("Error retrieving user info:", error);
+    res.status(500).json({ message: "Error retrieving user info", error: error.message });
+  }
+};
+
+
+
+
 
 module.exports = {
   addUser,
   updateUser,
   deleteUser,
   searchUsers,
+  getAllUser,
 };

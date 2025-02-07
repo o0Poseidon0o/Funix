@@ -35,6 +35,7 @@ const AddUser = () => {
     // Hiển thị ảnh tạm thời trước khi upload
     const imageUrl = URL.createObjectURL(file);
     setAvatarUrl(imageUrl);
+    setUserData({ ...userData, avatar: imageUrl });
   };
 
   // Hàm xử lý khi người dùng submit form
@@ -130,7 +131,6 @@ const AddUser = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
-    console.log({ ...userData, [name]: value })
   };
   
   return (
@@ -157,16 +157,6 @@ const AddUser = () => {
                 className="mb-4"
               />
             </div>
-            <div className="mt-6">
-              <button
-                className="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                type="submit"
-                disabled={isLoading}
-              >
-                {isLoading ? "Đang thêm..." : "Thêm Người Dùng"}
-              </button>
-            </div>
-            {message && <p className="mt-4 text-red-500">{message}</p>}
           </form>
         </div>
       </div>

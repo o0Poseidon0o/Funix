@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Settinguser = () => {
+  const [users, setUsers] = useState([]); // Khởi tạo state để lưu trữ người dùng
+  const [loading, setLoading] = useState(true); // Để hiển thị loading khi dữ liệu đang được tải
+
+  // Gọi API lấy dữ liệu người dùng
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/users/all");
+        setUsers(response.data.users); // Lưu dữ liệu vào state
+        setLoading(false); // Đánh dấu hoàn thành việc tải dữ liệu
+      } catch (error) {
+        console.error("Error fetching users:", error);
+        setLoading(false); // Nếu có lỗi, cũng đánh dấu tải xong
+      }
+    };
+
+    fetchUsers();
+  }, []); // Chỉ chạy 1 lần khi component mount
+
+  if (loading) {
+    return <div>Loading...</div>; // Hiển thị thông báo loading khi dữ liệu chưa được tải
+  }
+
   return (
     <div className="w-full mt-8">
       <p className="text-xl pb-3 flex items-center">
@@ -34,87 +58,28 @@ const Settinguser = () => {
             </tr>
           </thead>
           <tbody>
-            {/* hàng ngang 1 */}
-            <tr className="hover:bg-grey-lighter">
-              <td className="py-4 px-6 border-b border-grey-light">
-                Hình ảnh Url
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">5738</td>
-              <td className="py-4 px-6 border-b border-grey-light">Admin</td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                admin@towa.com.vn
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                <select className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="KTSX">KTSX</option>
-                  <option value="Option2">Option 2</option>
-                  <option value="Option3">Option 3</option>
-                </select>
-              </td>
-
-              <td className="py-4 px-6 border-b border-grey-light">
-                <select className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="KTSX">Admin</option>
-                  <option value="Option2">Option 2</option>
-                  <option value="Option3">Option 3</option>
-                </select>
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light text-white">
-                <div className="flex space-x-2">
-                  
-                  <button className="bg-red-500 w-14 rounded shadow-md">
-                    Sửa
-                  </button>
-                  <button className="bg-red-500 w-14 rounded shadow-md">
-                    Xóa
-                  </button>
-                </div>
-              </td>
-            </tr>
-            {/* hàng ngang 2 */}
-            <tr className="hover:bg-grey-lighter">
-              <td className="py-4 px-6 border-b border-grey-light">
-                Hình ảnh Url
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">5738</td>
-              <td className="py-4 px-6 border-b border-grey-light">Admin</td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                admin@towa.com.vn
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">KTSX</td>
-              <td className="py-4 px-6 border-b border-grey-light">Admin</td>
-              <td className="py-4 px-6 border-b border-grey-light text-white">
-                <div className="flex space-x-2">
-                  
-                  <button className="bg-red-500 w-14 rounded shadow-md">
-                    Sửa
-                  </button>
-                  <button className="bg-red-500 w-14 rounded shadow-md">
-                    Xóa
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr className="hover:bg-grey-lighter">
-              <td className="py-4 px-6 border-b border-grey-light">Lian</td>
-              <td className="py-4 px-6 border-b border-grey-light">Smith</td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                622322662
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                jonsmith@mail.com
-              </td>
-            </tr>
-            <tr className="hover:bg-grey-lighter">
-              <td className="py-4 px-6 border-b border-grey-light">Lian</td>
-              <td className="py-4 px-6 border-b border-grey-light">Smith</td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                622322662
-              </td>
-              <td className="py-4 px-6 border-b border-grey-light">
-                jonsmith@mail.com
-              </td>
-            </tr>
+            {users.map((user) => (
+              <tr key={user.id_users} className="hover:bg-grey-lighter">
+                <td className="py-4 px-6 border-b border-grey-light">
+                  <img
+                    src={`http://localhost:5000${user.avatar}`}
+                    alt="Avatar"
+                    className="w-12 h-12 rounded-full"
+                  />
+                </td>
+                <td className="py-4 px-6 border-b border-grey-light">{user.id_users}</td>
+                <td className="py-4 px-6 border-b border-grey-light">{user.username}</td>
+                <td className="py-4 px-6 border-b border-grey-light">{user.email_user}</td>
+                <td className="py-4 px-6 border-b border-grey-light">{user.department_name}</td>
+                <td className="py-4 px-6 border-b border-grey-light">{user.role_name}</td>
+                <td className="py-4 px-6 border-b border-grey-light text-white">
+                  <div className="flex space-x-2">
+                    <button className="bg-red-500 w-14 rounded shadow-md">Sửa</button>
+                    <button className="bg-red-500 w-14 rounded shadow-md">Xóa</button>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
