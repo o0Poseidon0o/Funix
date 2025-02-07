@@ -108,23 +108,36 @@ npm install axios
 Web_app_Towa/
 ├── backend/
 │   ├── src/
-│   │   ├── controllers/
-│   │   │   └── users/
-│   │   ├── middleware/
+│   │   ├── controllers/             # Nơi chứa các logic xử lý cho từng module
+│   │   │   ├── users/               # Controller của user
+│   │   │   │   └── userController.js
+│   │   │   └── avatars/             # Controller xử lý avatar
+│   │   │       └── avatarController.js
+│   │   ├── middleware/              # Middleware dùng chung
 │   │   │   └── Users/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── uploads/
-│   │   │   └── avatars/
-│   │   ├── server.js
+│   │   │       └── uploadAvatar.js  # Middleware upload file
+│   │   ├── models/                  # Định nghĩa các model cho database
+│   │   │   ├── Users.js
+│   │   │   ├── Departments.js
+│   │   │   └── Roles.js
+│   │   ├── routes/                  # Định nghĩa các route API
+│   │   │   ├── userRoutes.js        # Route cho user
+│   │   │   ├── avatarRoutes.js      # Route cho avatar
+│   │   │   └── index.js             # Đăng ký toàn bộ route
+│   │   ├── uploads/                 # Nơi lưu file tĩnh upload từ client
+│   │   │   └── avatars/             # Thư mục avatar
+│   │   ├── server.js                # File khởi chạy server
 │   │   └── ...
 │   ├── package.json
 │   └── ...
 └── frontend/
-    ├── public/
+    ├── public/                      # Các file tĩnh cho frontend
     ├── src/
-    │   ├── components/
-    │   ├── App.js
+    │   ├── components/              # Component ReactJS
+    │   │   ├── User/                # Component liên quan đến user
+    │   │   │   └── AvatarUpload.js  # Component upload avatar
+    │   │   └── ...                  
+    │   ├── App.js                   # Entry point chính của ReactJS
     │   ├── index.js
     │   └── ...
     ├── package.json
