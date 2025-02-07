@@ -105,3 +105,27 @@ npm install @heroicons/react
 npm install axios
 
 ### Cấu trúc dự án
+Web_app_Towa/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   │   └── users/
+│   │   ├── middleware/
+│   │   │   └── Users/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── uploads/
+│   │   │   └── avatars/
+│   │   ├── server.js
+│   │   └── ...
+│   ├── package.json
+│   └── ...
+└── frontend/
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   ├── App.js
+    │   ├── index.js
+    │   └── ...
+    ├── package.json
+    └── ...
