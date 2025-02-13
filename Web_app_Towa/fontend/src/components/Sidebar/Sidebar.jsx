@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
-import NotificationDropdown from "../Dropdowns/NotificationDropdown";
+
 import UserDropdown from "../Dropdowns/UserDropdown";
 import { useState } from "react";
 
@@ -28,9 +28,7 @@ export default function Sidebar() {
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
-            <li className="inline-block relative">
-              <NotificationDropdown />
-            </li>
+            
             <li className="inline-block relative">
               <UserDropdown />
             </li>
@@ -70,7 +68,7 @@ export default function Sidebar() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="border-0 px-3 py-2 h-12 border border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
+                  className="border-0 px-3 py-2 h-12 border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
                 />
               </div>
             </form>
@@ -236,7 +234,7 @@ export default function Sidebar() {
                 <ul className="hidden group-hover:block bg-white shadow-lg py-2 border-l-4 border-blueGray-300 mt-2">
                   <li>
                     <Link
-                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600 hover:text-red-600"
+                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600"
                       to="/Dataentry"
                     >
                       Lịch nhập liệu
@@ -244,7 +242,7 @@ export default function Sidebar() {
                   </li>
                   <li>
                     <Link
-                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600 hover:text-red-600"
+                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600"
                       to="/Chartview"
                     >
                       Tổng hợp

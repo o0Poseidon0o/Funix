@@ -9,8 +9,9 @@ exports.login = async (req, res) => {
   try {
     // Kiểm tra `id_users` và `password_user` có đầy đủ
     if (!id_users || !password_user) {
-      return res.status(400).json({ message: "Missing id_users or password_user" });
-      
+      return res
+        .status(400)
+        .json({ message: "Missing id_users or password_user" });
     }
 
     // Tìm người dùng và vai trò
@@ -24,7 +25,10 @@ exports.login = async (req, res) => {
     }
 
     // Kiểm tra mật khẩu
-    const isPasswordValid = await bcrypt.compare(password_user, user.password_user);
+    const isPasswordValid = await bcrypt.compare(
+      password_user,
+      user.password_user
+    );
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
@@ -45,15 +49,17 @@ exports.login = async (req, res) => {
       { expiresIn: "1h" }
     );
     console.log("Request body:", req.body);
-    // Trả về thành công
-    return res.status(200).json({ 
+    // Trong authloginController.js, sau khi tạo token
+    return res.status(200).json({
       message: "Login successful",
-      token, 
-      role: user.Role.name_role 
+      token,
+      role: user.Role.name_role,
+      id_users: user.id_users, // Trả về id_users để frontend có thể lấy avatar
     });
   } catch (error) {
     console.error("Error during login:", error.message);
-    return res.status(500).json({ message: "Server error, please try again later" });
+    return res
+      .status(500)
+      .json({ message: "Server error, please try again later" });
   }
-  
 };

@@ -8,5 +8,8 @@ const upload = require("../../middleware/Users/uploadAvatar");
 // router.post("/add", uploadavatar.single("avatar"), user.addUser);
 router.post("/add", upload.single("avatar"), user.addUser);
 router.get("/all",user.getAllUser)
+router.get('/search',user.searchUsers);
+router.delete('/delete/:id_users',user.deleteUser);
+router.put('/update/:id_users',user.updateUser)
 
 module.exports = router;

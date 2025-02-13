@@ -119,8 +119,6 @@ const AddUser = () => {
       setRoles(rolesData || []);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setDepartments([]);
-      setRoles([]);
     }
   };
 

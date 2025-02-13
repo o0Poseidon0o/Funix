@@ -19,15 +19,17 @@ const LoginPage = () => {
 
     try {
       const res = await axios.post("http://localhost:5000/api/auth/login", formData);
-      const { token, role } = res.data;
+      const { token, role,id_users } = res.data;
 
-      localStorage.setItem("token", token);
-      localStorage.setItem("role", role);
+      // Lưu thông tin đăng nhập vào localStorage
+    localStorage.setItem("token", token);
+    localStorage.setItem("role", role);
+    localStorage.setItem("id_users", id_users); // Lưu id_users
 
       if (role === "admin") {
         navigate("/admin");
       } else {
-        navigate("/dashboard");
+        navigate("/Dataentry");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
