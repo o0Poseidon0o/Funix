@@ -1,4 +1,5 @@
 const Roles = require("../../models/Roles/modelRoles");
+const Users =require("../../models/Users/User")
 const { Op } = require("sequelize");
 
 // Hiển thị tất cả Roles
@@ -36,7 +37,6 @@ const addRoles = async (req, res) => {
   }
 };
 
-// Xóa Role
 const deleteRole = async (req, res) => {
   try {
     const { id } = req.params; // Nhận ID từ URL
@@ -46,13 +46,25 @@ const deleteRole = async (req, res) => {
       return res.status(404).json({ message: "Không tìm thấy Role!" });
     }
 
-    await role.destroy(); // Xóa role
+    // Cập nhật người dùng liên quan để bỏ vai trò
+    await Users.update({ id_roles: null }, { where: { id_roles: id } });
 
-    res.json({ message: "Xóa Role thành công!" });
+    // Xóa vai trò
+    await role.destroy();
+
+    res.json({ message: "Xóa Role thành công! Các người dùng liên quan đã được cập nhật." });
   } catch (error) {
-    res.status(500).json({ message: "Có lỗi xảy ra!", error });
+    // Chuyển đổi lỗi thành dạng chuỗi hoặc trả về cụ thể hơn
+    console.error("Lỗi khi xóa Role:", error); // Log chi tiết trong console
+    res.status(500).json({ 
+      message: "Có lỗi xảy ra!", 
+      error: error.message || "Không thể xác định lỗi", 
+      details: error 
+    });
   }
 };
+
+
 // Sửa Role
 const updateRole = async (req, res) => {
   try {

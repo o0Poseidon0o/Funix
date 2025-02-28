@@ -27,9 +27,9 @@ const LoginPage = () => {
     localStorage.setItem("id_users", id_users); // Lưu id_users
 
       if (role === "admin") {
-        navigate("/admin");
+        navigate("/Welcome");
       } else {
-        navigate("/Dataentry");
+        navigate("/Welcome");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");

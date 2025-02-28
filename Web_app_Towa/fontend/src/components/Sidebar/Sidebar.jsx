@@ -77,76 +77,40 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Thống kê
+              Văn bản
             </h6>
             {/* Navigation */}
 
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/dashboard") !== -1
-                      ? "text-lightBlue-500 hover:text-red-600 ue-600"
-                      : "text-blueGray-700 hover:text-red-600 ")
-                  }
-                  to="/admin/dashboard"
-                >
-                  <i
-                    className={
-                      "fas fa-tv mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/dashboard") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Biểu đồ
-                </Link>
+            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+              {/* Menu Quản lý Role và Phòng ban */}
+              <li className="relative group">
+                <a className="text-blueGray-700 hover:text-red-600 text-xs uppercase py-3 font-bold block">
+                  <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  Các loại văn bản
+                </a>
+
+                {/* Menu con */}
+                <ul className="hidden group-hover:block bg-white shadow-lg py-2 border-l-4 border-blueGray-300 mt-2">
+                  <li>
+                    <Link
+                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600"
+                      to="/DocumentsManagement"
+                    >
+                      Quản lý văn bản
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="block px-4 py-2 text-blueGray-700 hover:text-red-600"
+                      to="#"
+                    >
+                      Danh sách văn bản
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/settings") !== -1
-                      ? "text-lightBlue-500 hover:text-red-600 ue-600"
-                      : "text-blueGray-700 hover:text-red-600 ")
-                  }
-                  to="/admin/settings"
-                >
-                  <i
-                    className={
-                      "fas fa-tools mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/settings") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Settings
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
-                  className={
-                    "text-xs uppercase py-3 font-bold block " +
-                    (window.location.href.indexOf("/admin/tables") !== -1
-                      ? "text-lightBlue-500 hover:text-red-600 ue-600"
-                      : "text-blueGray-700 hover:text-red-600 ")
-                  }
-                  to="/admin/tables"
-                >
-                  <i
-                    className={
-                      "fas fa-table mr-2 text-sm " +
-                      (window.location.href.indexOf("/admin/tables") !== -1
-                        ? "opacity-75"
-                        : "text-blueGray-300")
-                    }
-                  ></i>{" "}
-                  Tables
-                </Link>
-              </li>
+              
             </ul>
 
             {/* Divider */}
@@ -216,7 +180,7 @@ export default function Sidebar() {
             </ul>
 
             {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
+            <hr className="my-4 md:min-w-full" /> 
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
               Các Trang chức năng
@@ -261,6 +225,21 @@ export default function Sidebar() {
                 </Link>
               </li>
             </ul>
+             {/* Footer */}
+             <footer className="mt-auto text-center py-4 border-t border-blueGray-200">
+              <p className="text-blueGray-500 text-sm">
+                © {new Date().getFullYear()} Towa Việt Nam.
+              </p>
+              <p className="text-blueGray-400 text-xs">
+                <Link to="/terms" className="hover:text-red-600">
+                  Copyright
+                </Link>{" "}
+                |{" "}
+                <Link to="/privacy" className="hover:text-red-600">
+                  Lê Minh Nhân
+                </Link>
+              </p>
+            </footer>
           </div>
         </div>
       </nav>

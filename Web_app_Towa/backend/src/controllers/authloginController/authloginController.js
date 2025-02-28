@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-    console.log("Request body:", req.body);
+    // console.log("Request body:", req.body);
     // Trong authloginController.js, sau khi tạo token
     return res.status(200).json({
       message: "Login successful",

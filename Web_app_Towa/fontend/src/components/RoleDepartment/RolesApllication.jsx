@@ -24,7 +24,7 @@ const RolesApplication = () => {
       // Gửi dữ liệu tới API
       const response = await axios.post("http://localhost:5000/api/roles/add", role);
       alert("Role added successfully!");
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
 
       // Reset form sau khi thêm role thành công
       setRole({ id_roles: '', name_role: '' });

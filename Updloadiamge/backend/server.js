@@ -38,8 +38,8 @@ app.post("/upload", upload.single("image"), async (req, res) => {
   try {
     const { filename } = req.file;
     const filepath = `/uploads/${filename}`;
-    console.log(req.file)
-    console.log(filepath)
+    // console.log(req.file)
+    // console.log(filepath)
 
     await pool.query("INSERT INTO tb_person (id_person, avatar) VALUES ($1, $2)", [
       1,
@@ -69,7 +69,7 @@ app.get("/images/:id", async (req, res) => {
       const result = await pool.query("SELECT * FROM tb_person WHERE id_person = $1", [id]);
       const [row] = result.rows
       const avatarPath = path.join(__dirname, row.avatar)
-      console.log(avatarPath)
+      // console.log(avatarPath)
       res.status(200).json(result.rows);
     } catch (err) {
       res.status(500).json({ error: err.message });

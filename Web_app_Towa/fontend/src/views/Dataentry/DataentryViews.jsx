@@ -4,7 +4,7 @@ import AdminNavbar from "../../components/Navabar/AdminNavbar"
 import DataEntry from "../../components/Dataentry/DataEntry";
 
 const DataEntryViews = () => {
-    console.log("Usermanager component loaded");
+    // console.log("Usermanager component loaded");
   return (
     <>
       <Sidebar></Sidebar>

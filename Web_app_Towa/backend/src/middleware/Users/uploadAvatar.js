@@ -15,10 +15,10 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     const userId = file?.originalname?.split(".")?.[0] ?? "default";
-    console.log("Received id_users:", userId); // Kiểm tra giá trị của id_users
+    // console.log("Received id_users:", userId); // Kiểm tra giá trị của id_users
     const fileExtension = path.extname(file.originalname); // Lấy phần mở rộng của file
     const filename = `${userId}${fileExtension}`; // Đổi tên file theo id_users
-    console.log("Saving file as:", filename); // Kiểm tra tên file lưu
+    // console.log("Saving file as:", filename); // Kiểm tra tên file lưu
     cb(null, filename); // Gửi tên file mới
   },
 });

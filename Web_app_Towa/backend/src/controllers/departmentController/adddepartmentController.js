@@ -1,5 +1,6 @@
 // controllers/departmentController.js
 const Departments = require('../../models/Departments/departments');
+const Users = require("../../models/Users/User")
 const {Op} = require('sequelize');
 
 
@@ -88,25 +89,40 @@ const searchDepartments = async (req, res) => {
 
 
 
-
-// Xóa phòng ban
+//Xóa phòng ban
 const deleteDepartment = async (req, res) => {
     try {
-        const { id } = req.params; // Nhận ID từ URL
-
-        const department = await Departments.findByPk(id);
-
-        if (!department) {
-            return res.status(404).json({ message: "Không tìm thấy phòng ban!" });
-        }
-
-        await department.destroy(); // Xóa phòng ban
-
-        res.json({ message: "Xóa phòng ban thành công!" });
+      const { id } = req.params; // Nhận ID từ URL
+  
+      const department = await Departments.findByPk(id);
+  
+      if (!department) {
+        return res.status(404).json({ message: "Không tìm thấy phòng ban!" });
+      }
+  
+      // Cập nhật người dùng liên quan để bỏ phòng ban
+      await Users.update(
+        { id_departments: null }, 
+        { where: { id_departments: id } }
+      );
+  
+      // Xóa phòng ban
+      await department.destroy();
+  
+      res.json({
+        message: "Xóa phòng ban thành công! Các người dùng liên quan đã được cập nhật.",
+      });
     } catch (error) {
-        res.status(500).json({ message: "Có lỗi xảy ra!", error });
+      console.error("Chi tiết lỗi:", error);
+      res.status(500).json({
+        message: "Có lỗi xảy ra!",
+        error: error.message,
+        details: error,
+      });
     }
-};
+  };
+  
+  
 
 // Sửa phòng ban
 const updateDepartment = async (req, res) => {

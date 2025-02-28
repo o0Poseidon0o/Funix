@@ -5,7 +5,7 @@ import DepartmentApplication from "../../components/RoleDepartment/DepartmentApl
 import FromRoleDepartment from "../../components/RoleDepartment/FormRoleDepartment";
 
 const Department = () => {
-  console.log("Usermanager component loaded");
+  // console.log("Usermanager component loaded");
   return (
     <>
       <Sidebar></Sidebar>

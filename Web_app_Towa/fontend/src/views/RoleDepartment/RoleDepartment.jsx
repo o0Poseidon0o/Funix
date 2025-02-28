@@ -5,7 +5,7 @@ import RolesApllication from "../../components/RoleDepartment/RolesApllication";
 import SettingRoleDepartment from "../../components/RoleDepartment/SettingRoleDepartment";
 
 const RoleDepartment = () => {
-    console.log("Usermanager component loaded");
+    // console.log("Usermanager component loaded");
   return (
     <>
       <Sidebar></Sidebar>

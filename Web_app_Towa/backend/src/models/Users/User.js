@@ -28,7 +28,7 @@ const User = sequelize.define(
     },
     id_departments: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: Departments,
         key: "id_departments",
@@ -36,7 +36,7 @@ const User = sequelize.define(
     },
     id_roles: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: Roles,
         key: "id_roles",
